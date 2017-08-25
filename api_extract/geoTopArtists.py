@@ -19,8 +19,9 @@ for i in data:
 
 	temp = url+'&country='+i['Name']+'&api_key='+token+'&format=json&limit='+limit
 	r = requests.get(temp)
+	#print(r.text)
 	
-	text_file = open('geoTopArtists/+'+i['Name']+'.json', "w")
+	text_file = open('geoTopArtists/'+i['Name']+'.json', "w")
 	text_file.write(r.text)
 	text_file.close()
 	

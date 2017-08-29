@@ -1,4 +1,5 @@
-import urllib.request
+#coding: utf8
+import urllib
 import json
 from collections import namedtuple
 import requests
@@ -21,13 +22,13 @@ url = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists' #geoArtists
 for i in data:
 	print(i['Name'])
 
-	#temp = url+'&country='+i['Name']+'&api_key='+token+'&format=json&limit='+limit
-	#r = requests.get(temp)
-	#print(r.text)
+	temp = url+'&country='+i['Name']+'&api_key='+token+'&format=json&limit='+limit
+	r = requests.get(temp)
+	print(r.text)
 	
-	#text_file = open('geoTopArtists/'+i['Name']+'.json', "w")
-	#text_file.write(r.text)
-	#text_file.close()
+	text_file = open('geoTopArtists/'+i['Name']+'.json', "w")
+	text_file.write(r.text)
+	text_file.close()
 	
 
 

@@ -1,4 +1,5 @@
-import urllib.request, json
+import urllib.request
+import json
 from collections import namedtuple
 import requests
 #url = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=cher&api_key=ba3772fe9087004cadb3715a2f170555&format=json&limit=2"
@@ -7,7 +8,7 @@ import requests
 
 data = json.loads(json_string)
 #print(data[1])
-limit = '25'
+limit = '200'
 token = 'ba3772fe9087004cadb3715a2f170555'
 #url = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists' #geoArtists
 url = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks' #geoTracks

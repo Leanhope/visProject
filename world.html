@@ -8,28 +8,40 @@
   <script src="jquery.js"></script>
   <script src="jquery-jvectormap-2.0.3.min.js"></script>
   <script src="jquery-jvectormap-world-mill.js"></script>
-  <script src="rock.js"></script>
-  <script src="metal.js"></script>
-  <script src="jazz.js"></script>
+  <script src="tags/rock.js"></script>
+  <script src="tags/metal.js"></script>
+  <script src="tags/jazz.js"></script>
+  <script src="tags/blues.js"></script>
+  <script src="tags/indie.js"></script>
+  <script src="dropdown.js"></script>
+
 
 
 
 </head>
 <body>
   <div id="world-map-rock" style="width: 1920px; height: 1080px"></div>
+   <div class="dropdown">
+  	<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  	<div id="myDropdown" class="dropdown-content">
+    	<a href="#">Link 1</a>
+    	<a href="#">Link 2</a>
+    	<a href="#">Link 3</a>
+  	</div>
+</div> 
   <script>
     $(function(){
       $('#world-map-rock').vectorMap({
 		  map: 'world_mill',
 		  series: {
 		    regions: [{
-		      values: rock,
+		      values: indie,
 		      scale: ['#efedf5', '#756bb1'],
-		      normalizeFunction: 'linear'
+		      normalizeFunction: 'polynomial'
 		    }]
 		  },
 		  onRegionTipShow: function(e, el, code){
-		    el.html(el.html()+' ('+rock[code]+ '% ' + 'of the most popular music is tagged rock)');
+		    el.html(el.html()+' ('+indie[code]+ '% ' + 'of the most popular music is tagged rock)');
 		  }
 		});
     });

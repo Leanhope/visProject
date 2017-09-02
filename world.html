@@ -5,6 +5,8 @@
   <meta content="utf-8" http-equiv="encoding">
   <title>Last.fm Visualization</title>
   <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="css/sidebar.css" type="text/css" media="screen"/>
+
   <script src="jquery.js"></script>
   <script src="jquery-jvectormap-2.0.3.min.js"></script>
   <script src="jquery-jvectormap-world-mill.js"></script>
@@ -20,31 +22,51 @@
 
 </head>
 <body>
-  <div id="world-map-rock" style="width: 1920px; height: 1080px"></div>
-   <div class="dropdown">
-  	<button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  	<div id="myDropdown" class="dropdown-content">
-    	<a href="#">Link 1</a>
-    	<a href="#">Link 2</a>
-    	<a href="#">Link 3</a>
-  	</div>
-</div> 
-  <script>
-    $(function(){
-      $('#world-map-rock').vectorMap({
-		  map: 'world_mill',
-		  series: {
-		    regions: [{
-		      values: indie,
-		      scale: ['#efedf5', '#756bb1'],
-		      normalizeFunction: 'polynomial'
-		    }]
-		  },
-		  onRegionTipShow: function(e, el, code){
-		    el.html(el.html()+' ('+indie[code]+ '% ' + 'of the most popular music is tagged rock)');
-		  }
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+<div>
+<a>bla</a>
+</div>
+</div>
+	<div id="world-map" style="width: 1920px; height: 1080px"></div>
+		<!--<div class="dropdown">
+		<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+			<div id="myDropdown" class="dropdown-content">
+    			<a href="#">Link 1</a>
+    			<a href="#">Link 2</a>
+    			<a href="#">Link 3</a>
+			</div>
+		</div> //-->
+	<script>
+	$(function(){
+		$('#world-map').vectorMap({
+			map: 'world_mill',
+			series: {
+				regions: [{
+					values: indie,
+					scale: ['#efedf5', '#756bb1'],
+					normalizeFunction: 'linear'
+				}]
+			},
+			onRegionTipShow: function(e, el, code){
+				el.html(el.html()+' ('+indie[code]+ '% ' + 'of the most popular music is tagged rock)');
+			},
+			onRegionClick: function(event, code) {
+				openNav();
+
+			;}
 		});
-    });
-  </script>
+	});
+	</script>
+	<script>
+	function openNav() {
+    document.getElementById("mySidenav").style.width = "50%";
+	}
+
+	function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+	}
+</script>
 </body>
 </html>

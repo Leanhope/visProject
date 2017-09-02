@@ -10,7 +10,7 @@ import sys
 source = '/home/hans/visProject/api_extract/geoTopArtists/*.json'
 token = 'ba3772fe9087004cadb3715a2f170555'
 final = str()
-tag = sys.argv[1]
+tag =  sys.argv[1]
 with open('country_extract.json', 'r') as handle:
 	parsed = json.load(handle)
 

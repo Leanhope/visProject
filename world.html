@@ -91,11 +91,12 @@
 	<script>
 
     var tag = rock;
-    var blue = ['#ece7f2', '#a6bddb', '#2b8cbe']
-    var red = ['#fee0d2', '#fc9272', '#de2d26']
-    var green = ['#f7fcb9', '#addd8e' ,'#31a354']
-    var grey = ['#f0f0f0', '#bdbdbd', '#636363']
+    var blue = ['#f2f0f7','#cbc9e2','#9e9ac8','#6a51a3']
+    var red = ['#fee5d9','#fcae91','#fb6a4a','#cb181d']
+    var green = ['#edf8e9','#bae4b3','#74c476','#238b45']
+    var grey = ['#f7f7f7','#cccccc','#969696','#525252']
     var my_json;
+    var name;
 
 	$(function(){
 		$('#world-map').vectorMap({
@@ -118,7 +119,8 @@
 				document.getElementById("mySidenav").style.width = "35%";
     			$(document).ready(function(){
     				var map = $('#world-map').vectorMap('get', 'mapObject');
-     				var name = map.getRegionName(code);
+     				name = map.getRegionName(code);
+            console.log(name)
     				if (topartistiscountry[code])
     				{	
     					$(".error").text(" ")
@@ -163,14 +165,14 @@
     					$(".s4").html("");
 
     				}
-    			})
+              arr = jQuery.grep(my_json.toptags, function(i, v) {
+              if(i.name == name)
+              return(i, v)
+            });
+           console.log(arr[0].tags[0])
 
-		    	$.each(my_json.toptags, function(i, v) {
-		    		if (eval(v.name) == name) {
-		       			console.log("v.name")
-		        	return;
-			    }
-			});
+
+    			})
 			;}
 		});
 	});

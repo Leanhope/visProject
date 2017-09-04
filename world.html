@@ -6,64 +6,119 @@
   <title>Last.fm Visualization</title>
   <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="css/sidebar.css" type="text/css" media="screen"/>
-
   <script src="jquery.js"></script>
   <script src="jquery-jvectormap-2.0.3.min.js"></script>
   <script src="jquery-jvectormap-world-mill.js"></script>
+  <script src="morris.min.js"></script>
+  <script src="raphael.js"></script>
+  <link rel="stylesheet" href="morris.css" type="text/css" media="screen">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>  
   <script src="tags/rock.js"></script>
   <script src="tags/metal.js"></script>
   <script src="tags/jazz.js"></script>
   <script src="tags/blues.js"></script>
   <script src="tags/indie.js"></script>
+  <script src="tags/classic.js"></script>
+  <script src="tags/electro.js"></script>
+  <script src="tags/rap.js"></script>
+  <script src="tags/pop.js"></script>
   <script src="api_extract/topartists.js"></script>
   <script src="api_extract/countries.js"></script>
   <script src="dropdown.js"></script>
+  <script src="sidebar.js"></script>
 
 </head>
 <body>
-<div id="mySidenav" class="sidenav">
-<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<div id="mySidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-<div class="header"></div>
-<div class="error"></div>
-<div class="overview">
-<table class="toptable">
-<tr><th></th><th>Top Artists</th><th></th><th></th></tr>
-<tr><td>1.</td><td class="img0"></td><td class="topa0"></td><td class="topt0"></td><td class="s0"></td></tr>
-<tr><td>2.</td><td class="img1"></td><td class="topa1"></td><td class="topt1"></td><td class="s1"></td></tr>
-<tr><td>3.</td><td class="img2"></td><td class="topa2"></td><td class="topt2"></td><td class="s2"></td></tr>
-<tr><td>4.</td><td class="img3"></td><td class="topa3"></td><td class="topt3"></td><td class="s3"></td></tr>
-<tr><td>5.</td><td class="img4"></td><td class="topa4"></td><td class="topt4"></td><td class="s4"></td></tr>
-</table>
+	<div class="header"></div>
+	<div class="error"></div>
+	<div class="overview">
+		<table class="toptable">
+			<tr><th></th><th>Top Artists</th><th></th><th></th></tr>
+			<tr><td>1.</td><td class="img0"></td><td class="topa0"></td><td class="topt0"></td><td class="s0"></td></tr>
+			<tr><td>2.</td><td class="img1"></td><td class="topa1"></td><td class="topt1"></td><td class="s1"></td></tr>
+			<tr><td>3.</td><td class="img2"></td><td class="topa2"></td><td class="topt2"></td><td class="s2"></td></tr>
+			<tr><td>4.</td><td class="img3"></td><td class="topa3"></td><td class="topt3"></td><td class="s3"></td></tr>
+			<tr><td>5.</td><td class="img4"></td><td class="topa4"></td><td class="topt4"></td><td class="s4"></td></tr>
+		</table>
+	<div id="myfirstchart" style="height: 250px; width: 600px; z-index: 8000"></div>
+	</div>
+	</div>
 
-</div>
+	<div class = "fullscreen" id="world-map"></div>
+
+  <div id="Sidenav" class="sidenav_right">
+
+    <h3 style="margin-left: 5px;color: lightgrey">Heatmap Options</h3>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
+      <button class="button" value="red" style="background-color: #de2d26"> Red</button>
+      <button class="button" value="blue" style="background-color: #2b8cbe">Blue</button>
+      <button class="button" value=green style="background-color: #31a354">Green</button>
+      <button class="button" value=grey style="background-color: #636363">Grey</button>
+
+    <form>
+      <select id = "tags" class = "tags">
+        <option id = "rock">Rock</option> 
+        <option id = "metal">Metal</option> 
+        <option id = "jazz">Jazz</option> 
+        <option id = "blues">Blues</option> 
+        <option id = "indie">Indie</option> 
+        <option id = "electro">Electro</option> 
+        <option id = "classic">Classic</option>
+        <option id = "rap">Rap</option>    
+        <option id = "pop">Pop</option>       
+      </select>
+    </form>
+
+    <form>
+      <fieldset id = "normalize" style="border:none; color: lightgrey; margin-top: 20px">
+        <input type="radio"  name="functions" id="Linear" value="linear" checked>
+        <label for="Linear">Linear</label>
+        <input type="radio"  name="functions" id="Polynomial" value="polynomial">
+        <label for="Polynomial">Polynomial</label>
+      </fieldset>
+    </form>
+  </div>
+  
+  <div class = "navbar">
+    <span class = "navbar" style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+  </div>
 
 
-</div>
-	<div id="world-map" style="width: 1920px; height: 1080px"></div>
+
 	<script>
+
+    var tag = rock;
+    var blue = ['#ece7f2', '#a6bddb', '#2b8cbe']
+    var red = ['#fee0d2', '#fc9272', '#de2d26']
+    var green = ['#f7fcb9', '#addd8e' ,'#31a354']
+    var grey = ['#f0f0f0', '#bdbdbd', '#636363']
+    var my_json;
+
 	$(function(){
 		$('#world-map').vectorMap({
 			map: 'world_mill',
 			series: {
 				regions: [{
-					values: indie,
+					values: rock,
 					scale: ['#efedf5', '#756bb1'],
 					normalizeFunction: 'linear'
 				}]
 			},
 
 			onRegionTipShow: function(e, el, code){
-				el.html(el.html()+' ('+indie[code]+ '% ' + 'of the most popular music is tagged indie)');
+			el.html(el.html()+' ('+ eval(tag)[code]+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
 			},
 
 
 			onRegionClick: function(e, code) {
-				
 
 				document.getElementById("mySidenav").style.width = "35%";
     			$(document).ready(function(){
-
+    				var map = $('#world-map').vectorMap('get', 'mapObject');
+     				var name = map.getRegionName(code);
     				if (topartistiscountry[code])
     				{	
     					$(".error").text(" ")
@@ -108,20 +163,84 @@
     					$(".s4").html("");
 
     				}
-
-
     			})
 
-
+		    	$.each(my_json.toptags, function(i, v) {
+		    		if (eval(v.name) == name) {
+		       			console.log("v.name")
+		        	return;
+			    }
+			});
 			;}
 		});
 	});
-	</script>
-	<script>
+
+	$.getJSON("results.json", function(json) {
+		console.log("hi")
+	    my_json = json;
+	    console.log(my_json)
+	});
+
+    $("#tags").change(function() {
+        tag = $(this).val().toLowerCase()
+        var mapObject = $('#world-map').vectorMap('get', 'mapObject');
+        var values = mapObject.series.regions[0]
+        values.setValues(eval(tag));
+        var valuesPrev = $.map(eval(tag), function(value){return value});
+        values.params.min = Math.min.apply(null, valuesPrev);
+        values.params.max = Math.max.apply(null, valuesPrev);
+        values.setValues(eval(tag));
+        console.log(my_json)
+      });
+
+    $("#normalize").change(function() {
+        value = $('input[name="functions"]:checked').val();
+        var mapObject = $('#world-map').vectorMap('get', 'mapObject');
+        console.log(value.toString())
+        var values = mapObject.series.regions[0]
+        values.setNormalizeFunction(value.toString());
+        var valuesPrev = $.map(eval(tag), function(value){return value});
+        values.params.min = Math.min.apply(null, valuesPrev);
+        values.params.max = Math.max.apply(null, valuesPrev);
+        values.setValues(eval(tag));
+      });
+
+    $("button").click(function(){
+      var mapObject = $('#world-map').vectorMap('get', 'mapObject');
+      var values = mapObject.series.regions[0];
+      console.log(eval($(this).val()));
+      values.setScale(eval($(this).val()))
+      var valuesPrev = $.map(eval(tag), function(value){return value});
+      values.params.min = Math.min.apply(null, valuesPrev);
+      values.params.max = Math.max.apply(null, valuesPrev);
+      values.setValues(eval(tag));
+    });
 
 	function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 	}
+
+	new Morris.Donut({
+	  // ID of the element in which to draw the chart.
+	  element: 'myfirstchart',
+	  // Chart data records -- each entry in this array corresponds to a point on
+	  // the chart.
+	  data: [
+	    { year: '2008', value: 20 },
+	    { year: '2009', value: 10 },
+	    { year: '2010', value: 5 },
+	    { year: '2011', value: 5 },
+	    { year: '2012', value: 20 }
+	  ],
+	  // The name of the data record attribute that contains x-values.
+	  xkey: 'year',
+	  // A list of names of data record attributes that contain y-values.
+	  ykeys: ['value'],
+	  // Labels for the ykeys -- will be displayed when you hover over the
+	  // chart.
+	  labels: ['Value']
+	});
+
 </script>
 </body>
 </html>

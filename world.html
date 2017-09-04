@@ -15,29 +15,32 @@
   <script src="tags/jazz.js"></script>
   <script src="tags/blues.js"></script>
   <script src="tags/indie.js"></script>
+  <script src="api_extract/topartists.js"></script>
+  <script src="api_extract/countries.js"></script>
   <script src="dropdown.js"></script>
-
-
-
 
 </head>
 <body>
 <div id="mySidenav" class="sidenav">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-<div>
-<a>bla</a>
+<div class="header"></div>
+<div class="error"></div>
+<div class="overview">
+<table class="toptable">
+<tr><th></th><th>Top Artists</th><th></th><th></th></tr>
+<tr><td>1.</td><td class="img0"></td><td class="topa0"></td><td class="topt0"></td><td class="s0"></td></tr>
+<tr><td>2.</td><td class="img1"></td><td class="topa1"></td><td class="topt1"></td><td class="s1"></td></tr>
+<tr><td>3.</td><td class="img2"></td><td class="topa2"></td><td class="topt2"></td><td class="s2"></td></tr>
+<tr><td>4.</td><td class="img3"></td><td class="topa3"></td><td class="topt3"></td><td class="s3"></td></tr>
+<tr><td>5.</td><td class="img4"></td><td class="topa4"></td><td class="topt4"></td><td class="s4"></td></tr>
+</table>
+
 </div>
+
+
 </div>
 	<div id="world-map" style="width: 1920px; height: 1080px"></div>
-		<!--<div class="dropdown">
-		<button onclick="myFunction()" class="dropbtn">Dropdown</button>
-			<div id="myDropdown" class="dropdown-content">
-    			<a href="#">Link 1</a>
-    			<a href="#">Link 2</a>
-    			<a href="#">Link 3</a>
-			</div>
-		</div> //-->
 	<script>
 	$(function(){
 		$('#world-map').vectorMap({
@@ -49,20 +52,72 @@
 					normalizeFunction: 'linear'
 				}]
 			},
+
 			onRegionTipShow: function(e, el, code){
-				el.html(el.html()+' ('+indie[code]+ '% ' + 'of the most popular music is tagged rock)');
+				el.html(el.html()+' ('+indie[code]+ '% ' + 'of the most popular music is tagged indie)');
 			},
-			onRegionClick: function(event, code) {
-				openNav();
+
+
+			onRegionClick: function(e, code) {
+				
+
+				document.getElementById("mySidenav").style.width = "35%";
+    			$(document).ready(function(){
+
+    				if (topartistiscountry[code])
+    				{	
+    					$(".error").text(" ")
+    					$(".header").text(countries[code]);
+    					$(".topa0").text(topartistiscountry[code][0]["artist"]);
+    					$(".topa1").text(topartistiscountry[code][1]["artist"]);
+    					$(".topa2").text(topartistiscountry[code][2]["artist"]);
+    					$(".topa3").text(topartistiscountry[code][3]["artist"]);
+    					$(".topa4").text(topartistiscountry[code][4]["artist"]);
+    					$(".img0").html("<a href="+topartistiscountry[code][0]["url"]+" target='_blank'><img src="+topartistiscountry[code][0]["img"]+"  height=80 width=80/></a>");
+    					$(".img1").html("<a href="+topartistiscountry[code][1]["url"]+" target='_blank'><img src="+topartistiscountry[code][1]["img"]+"  height=80 width=80/></a>");
+    					$(".img2").html("<a href="+topartistiscountry[code][2]["url"]+" target='_blank'><img src="+topartistiscountry[code][2]["img"]+"  height=80 width=80/></a>");
+    					$(".img3").html("<a href="+topartistiscountry[code][3]["url"]+" target='_blank'><img src="+topartistiscountry[code][3]["img"]+"  height=80 width=80/></a>");
+    					$(".img4").html("<a href="+topartistiscountry[code][4]["url"]+" target='_blank'><img src="+topartistiscountry[code][4]["img"]+"  height=80 width=80/></a>");
+    					$(".s0").html("("+topartistiscountry[code][0]["listeners"]+")");
+    					$(".s1").html("("+topartistiscountry[code][1]["listeners"]+")");
+    					$(".s2").html("("+topartistiscountry[code][2]["listeners"]+")");
+    					$(".s3").html("("+topartistiscountry[code][3]["listeners"]+")");
+    					$(".s4").html("("+topartistiscountry[code][4]["listeners"]+")");
+    				}
+    				else
+    				{
+    					$(".header").text(countries[code]);
+    					
+    					$(".error").text("No data for "+countries[code]);
+    					
+    					$(".header").text(countries[code]);
+    					$(".topa0").text("");
+    					$(".topa1").text("");
+    					$(".topa2").text("");
+    					$(".topa3").text("");
+    					$(".topa4").text("");
+    					$(".img0").html("");
+    					$(".img1").html("");
+    					$(".img2").html("");
+    					$(".img3").html("");
+    					$(".img4").html("");
+    					$(".s0").html("");
+    					$(".s1").html("");
+    					$(".s2").html("");
+    					$(".s3").html("");
+    					$(".s4").html("");
+
+    				}
+
+
+    			})
+
 
 			;}
 		});
 	});
 	</script>
 	<script>
-	function openNav() {
-    document.getElementById("mySidenav").style.width = "50%";
-	}
 
 	function closeNav() {
     document.getElementById("mySidenav").style.width = "0";

@@ -224,7 +224,7 @@ svg {
   background: lime; /* Just to visualize the extent */
 }
  /* The side navigation menu */
-.sidenav {
+.sidenav_right {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
@@ -238,7 +238,7 @@ svg {
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav_right a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -248,12 +248,12 @@ svg {
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
+.sidenav_right a:hover, .offcanvas a:focus{
     color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.sidenav_right .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -269,8 +269,8 @@ svg {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav_right {padding-top: 15px;}
+    .sidenav_right a {font-size: 18px;}
 } 
 
 .navbar {

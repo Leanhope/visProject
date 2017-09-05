@@ -55,10 +55,13 @@
 
     <h3 style="margin-left: 5px;color: lightgrey">Heatmap Options</h3>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
-      <button class="button" value="red" style="background-color: #de2d26"> Red</button>
-      <button class="button" value="blue" style="background-color: #2b8cbe">Blue</button>
-      <button class="button" value=green style="background-color: #31a354">Green</button>
-      <button class="button" value=grey style="background-color: #636363">Grey</button>
+      <button class="button" value="red" style="background: linear-gradient(to right, #fee5d9,#fcae91,#fb6a4a,#cb181d)"> Red</button>
+      <button class="button" value="blue" style="background: linear-gradient(to right, #f2f0f7,#cbc9e2,#9e9ac8,#6a51a3)">Blue</button>
+      <button class="button" value=green style="background: linear-gradient(to right, #edf8e9,#bae4b3,#74c476,#238b45)">Green</button>
+      <button class="button" value=sunrise style="background:  linear-gradient(to right, #ffffb2, #fecc5c, #fd8d3c,#e31a1c)">Sunrise</button>
+      <!--<button class="button" value=purple style="background:  linear-gradient(to right, #edf8fb,#b3cde3,#8c96c6,#88419d)">Purple</button>
+      <button class="button" value=green2 style="background:  linear-gradient(to right, #edf8fb,#b2e2e2,#66c2a4,#238b45)">green2</button>
+      <button class="button" value=bluegreen style="background:  linear-gradient(to right, #ffffcc,#a1dab4,#41b6c4,#225ea8)">bluegreen</button>-->
 
     <form>
       <select id = "tags" class = "tags">
@@ -96,7 +99,11 @@
     var blue = ['#f2f0f7','#cbc9e2','#9e9ac8','#6a51a3']
     var red = ['#fee5d9','#fcae91','#fb6a4a','#cb181d']
     var green = ['#edf8e9','#bae4b3','#74c476','#238b45']
-    var grey = ['#f7f7f7','#cccccc','#969696','#525252']
+    var sunrise = ['#ffffb2', '#fecc5c', '#fd8d3c','#e31a1c']
+    //var purple = ['#edf8fb','#b3cde3','#8c96c6','#88419d']
+    //var green2 = ['#edf8fb','#b2e2e2','#66c2a4','#238b45']
+    //var bluegreen = ['#ffffcc','#a1dab4','#41b6c4','#225ea8']
+
     var my_json;
     var dict;
     var chart
@@ -114,7 +121,12 @@
 			},
 
 			onRegionTipShow: function(e, el, code){
-			el.html(el.html()+' ('+ eval(tag)[code].toFixed(2)+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
+        if (topartistiscountry[code]){
+		    	el.html(el.html()+' ('+ eval(tag)[code].toFixed(2)+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
+        }
+        else{
+          el.html("No data available for " + el.html());
+        }
 			},
 
 
@@ -139,6 +151,29 @@
               $(".s2").html("");
               $(".s3").html("");
               $(".s4").html("");
+
+              chart = new CanvasJS.Chart("tagDonut", {
+              backgroundColor:"transparent",
+
+              title: {
+                text: "Toptags (relative)"
+              },
+              animationEnabled: true,
+              theme: "theme2",
+              data: [
+              {
+                type: "doughnut",
+                indexLabelFontFamily: "Garamond",
+                indexLabelFontSize: 20,
+                startAngle: 0,
+                indexLabelFontColor: "dimgrey",
+                indexLabelLineColor: "darkgrey",
+                toolTipContent: "{indexLabel}," + " {y}%",
+
+                dataPoints: []
+              }
+              ]
+              });
 
             if (topartistiscountry[code])
     				{	
@@ -189,6 +224,7 @@
     				{
     					//$(".header").text(countries[code]);
     					$(".error").text("No data for "+countries[code]);
+              chart.destroy()
     				}
     			})
 			;}
@@ -239,29 +275,6 @@
 	function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 	}
-
-  chart = new CanvasJS.Chart("tagDonut", {
-    backgroundColor:"transparent",
-
-    title: {
-      text: "Toptags (relative)"
-    },
-    animationEnabled: true,
-    theme: "theme2",
-    data: [
-    {
-      type: "doughnut",
-      indexLabelFontFamily: "Garamond",
-      indexLabelFontSize: 20,
-      startAngle: 0,
-      indexLabelFontColor: "dimgrey",
-      indexLabelLineColor: "darkgrey",
-      toolTipContent: "{indexLabel}," + " {y}%",
-
-      dataPoints: []
-    }
-    ]
-  });
 
 </script>
 </body>

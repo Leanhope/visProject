@@ -26,6 +26,8 @@
   <script src="api_extract/countries.js"></script>
   <script src="dropdown.js"></script>
   <script src="sidebar.js"></script>
+  <script src="jquery.canvasjs.min.js"></script>
+
 
 </head>
 <body>
@@ -43,7 +45,7 @@
 			<tr><td>4.</td><td class="img3"></td><td class="topa3"></td><td class="topt3"></td><td class="s3"></td></tr>
 			<tr><td>5.</td><td class="img4"></td><td class="topa4"></td><td class="topt4"></td><td class="s4"></td></tr>
 		</table>
-	<div id="myfirstchart" style="height: 250px; width: 600px; z-index: 8000"></div>
+	<div id="tagDonut" style="height: 250px; width: 600px; z-index: 8000"></div>
 	</div>
 	</div>
 
@@ -96,6 +98,8 @@
     var green = ['#edf8e9','#bae4b3','#74c476','#238b45']
     var grey = ['#f7f7f7','#cccccc','#969696','#525252']
     var my_json;
+    var dict;
+    var chart
     var name;
 
 	$(function(){
@@ -110,7 +114,7 @@
 			},
 
 			onRegionTipShow: function(e, el, code){
-			el.html(el.html()+' ('+ eval(tag)[code]+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
+			el.html(el.html()+' ('+ eval(tag)[code].toFixed(2)+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
 			},
 
 
@@ -118,61 +122,74 @@
 
 				document.getElementById("mySidenav").style.width = "35%";
     			$(document).ready(function(){
-    				var map = $('#world-map').vectorMap('get', 'mapObject');
-     				name = map.getRegionName(code);
-            console.log(name)
-    				if (topartistiscountry[code])
+    				$(".error").text(" ")
+              $(".header").text("");
+              $(".topa0").text("");
+              $(".topa1").text("");
+              $(".topa2").text("");
+              $(".topa3").text("");
+              $(".topa4").text("");
+              $(".img0").html("");
+              $(".img1").html("");
+              $(".img2").html("");
+              $(".img3").html("");
+              $(".img4").html("");
+              $(".s0").html("");
+              $(".s1").html("");
+              $(".s2").html("");
+              $(".s3").html("");
+              $(".s4").html("");
+
+            if (topartistiscountry[code])
     				{	
-    					$(".error").text(" ")
-    					$(".header").text(countries[code]);
-    					$(".topa0").text(topartistiscountry[code][0]["artist"]);
-    					$(".topa1").text(topartistiscountry[code][1]["artist"]);
-    					$(".topa2").text(topartistiscountry[code][2]["artist"]);
-    					$(".topa3").text(topartistiscountry[code][3]["artist"]);
-    					$(".topa4").text(topartistiscountry[code][4]["artist"]);
-    					$(".img0").html("<a href="+topartistiscountry[code][0]["url"]+" target='_blank'><img src="+topartistiscountry[code][0]["img"]+"  height=80 width=80/></a>");
-    					$(".img1").html("<a href="+topartistiscountry[code][1]["url"]+" target='_blank'><img src="+topartistiscountry[code][1]["img"]+"  height=80 width=80/></a>");
-    					$(".img2").html("<a href="+topartistiscountry[code][2]["url"]+" target='_blank'><img src="+topartistiscountry[code][2]["img"]+"  height=80 width=80/></a>");
-    					$(".img3").html("<a href="+topartistiscountry[code][3]["url"]+" target='_blank'><img src="+topartistiscountry[code][3]["img"]+"  height=80 width=80/></a>");
-    					$(".img4").html("<a href="+topartistiscountry[code][4]["url"]+" target='_blank'><img src="+topartistiscountry[code][4]["img"]+"  height=80 width=80/></a>");
-    					$(".s0").html("("+topartistiscountry[code][0]["listeners"]+")");
-    					$(".s1").html("("+topartistiscountry[code][1]["listeners"]+")");
-    					$(".s2").html("("+topartistiscountry[code][2]["listeners"]+")");
-    					$(".s3").html("("+topartistiscountry[code][3]["listeners"]+")");
-    					$(".s4").html("("+topartistiscountry[code][4]["listeners"]+")");
+              $(".header").text(countries[code]);
+
+              $.each(topartistiscountry[code], function(key, value){
+                $(".topa"+key).text(value["artist"])
+              });
+
+              $.each(topartistiscountry[code], function(key, value){
+                $(".img"+key).html("<a href="+value["url"]+" target='_blank'><img src="+value["img"]+"  height=80 width=80/></a>");
+              });
+
+              $.each(topartistiscountry[code], function(key, value){
+                $(".s" +key).html("("+value["listeners"]+")");
+              });
+
+              arr = jQuery.grep(my_json.toptags, function(i, v) {
+              if(i.name == countries[code])
+              return(i, v)
+              });
+
+              dict = [];
+
+              var min = Math.min(arr[0].tags.length, 10)
+
+              for(i = 0; i < min; i++) { 
+                 dict.push(arr[0].tags[i]);
+              }
+
+              console.log(dict)
+              var sum = 0;
+              $.each(dict, function(key, value){            
+                sum += parseFloat(Object.values(value)[0].toFixed(2));
+              });
+
+              console.log(sum)
+              chart.options.data[0].dataPoints = [];
+
+              $.each(dict, function(key, value){            
+                chart.options.data[0].dataPoints.push({y: (parseFloat(Object.values(value)[0])/sum*100).toFixed(2), indexLabel: Object.keys(value)[0]}
+              )});
+
+              chart.render()
     				}
+
     				else
     				{
-    					$(".header").text(countries[code]);
-    					
+    					//$(".header").text(countries[code]);
     					$(".error").text("No data for "+countries[code]);
-    					
-    					$(".header").text(countries[code]);
-    					$(".topa0").text("");
-    					$(".topa1").text("");
-    					$(".topa2").text("");
-    					$(".topa3").text("");
-    					$(".topa4").text("");
-    					$(".img0").html("");
-    					$(".img1").html("");
-    					$(".img2").html("");
-    					$(".img3").html("");
-    					$(".img4").html("");
-    					$(".s0").html("");
-    					$(".s1").html("");
-    					$(".s2").html("");
-    					$(".s3").html("");
-    					$(".s4").html("");
-
     				}
-              arr = jQuery.grep(my_json.toptags, function(i, v) {
-              if(i.name == name)
-              return(i, v)
-            });
-          var dict = [arr[0].tags[0], arr[0].tags[1], arr[0].tags[2], arr[0].tags[3], arr[0].tags[4]]
-          console.log(dict[0])
-
-
     			})
 			;}
 		});
@@ -223,26 +240,28 @@
     document.getElementById("mySidenav").style.width = "0";
 	}
 
-	new Morris.Donut({
-	  // ID of the element in which to draw the chart.
-	  element: 'myfirstchart',
-	  // Chart data records -- each entry in this array corresponds to a point on
-	  // the chart.
-	  data: [
-	    { year: '2008', value: 20 },
-	    { year: '2009', value: 10 },
-	    { year: '2010', value: 5 },
-	    { year: '2011', value: 5 },
-	    { year: '2012', value: 20 }
-	  ],
-	  // The name of the data record attribute that contains x-values.
-	  xkey: 'year',
-	  // A list of names of data record attributes that contain y-values.
-	  ykeys: ['value'],
-	  // Labels for the ykeys -- will be displayed when you hover over the
-	  // chart.
-	  labels: ['Value']
-	});
+  chart = new CanvasJS.Chart("tagDonut", {
+    backgroundColor:"transparent",
+
+    title: {
+      text: "Toptags (relative)"
+    },
+    animationEnabled: true,
+    theme: "theme2",
+    data: [
+    {
+      type: "doughnut",
+      indexLabelFontFamily: "Garamond",
+      indexLabelFontSize: 20,
+      startAngle: 0,
+      indexLabelFontColor: "dimgrey",
+      indexLabelLineColor: "darkgrey",
+      toolTipContent: "{indexLabel}," + " {y}%",
+
+      dataPoints: []
+    }
+    ]
+  });
 
 </script>
 </body>

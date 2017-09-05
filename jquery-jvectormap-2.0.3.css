@@ -170,7 +170,7 @@ svg {
   bottom: 0;
   right: 0;
   overflow: auto;
-  background: lime; /* Just to visualize the extent */
+  background: #292929;
 }
  /* The side navigation menu */
 .sidenav_right {

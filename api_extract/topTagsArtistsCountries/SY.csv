@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Metallica,
+tag.Metallica.thrash metal,100
+tag.Metallica.metal,91
+tag.Metallica.heavy metal,74
+tag.Metallica.hard rock,41
+tag.Metallica.rock,34
+tag.Metallica.seen live,30
+tag.Metallica.metallica,10
+tag.Metallica.speed metal,7
+tag.Metallica.classic rock,6
+tag.Metallica.american,6
+tag.[unknown],
+tag.[unknown].mysterious,100
+tag.[unknown].mistagged artist,75
+tag.[unknown].unknown,65
+tag.[unknown].rock,46
+tag.[unknown].Soundtrack,34
+tag.[unknown].seen live,22
+tag.[unknown].alternative,17
+tag.[unknown].electronic,16
+tag.[unknown].emo,15
+tag.[unknown].jazz,15
+tag.Adele,
+tag.Adele.soul,100
+tag.Adele.female vocalists,82
+tag.Adele.british,66
+tag.Adele.singer-songwriter,51
+tag.Adele.indie,40
+tag.Adele.pop,19
+tag.Adele.Adele,12
+tag.Adele.jazz,8
+tag.Adele.acoustic,4
+tag.Adele.female vocalist,4
+tag.Lana Del Rey,
+tag.Lana Del Rey.female vocalists,100
+tag.Lana Del Rey.indie,92
+tag.Lana Del Rey.indie pop,88
+tag.Lana Del Rey.pop,79
+tag.Lana Del Rey.alternative,66
+tag.Lana Del Rey.american,14
+tag.Lana Del Rey.dream pop,12
+tag.Lana Del Rey.seen live,11
+tag.Lana Del Rey.trip-hop,9
+tag.Lana Del Rey.singer-songwriter,9

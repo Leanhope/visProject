@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Muse,
+tag.Muse.alternative rock,100
+tag.Muse.rock,83
+tag.Muse.alternative,70
+tag.Muse.Progressive rock,57
+tag.Muse.seen live,46
+tag.Muse.indie,43
+tag.Muse.british,21
+tag.Muse.indie rock,12
+tag.Muse.britpop,10
+tag.Muse.Muse,10
+tag.Pink Floyd,
+tag.Pink Floyd.Progressive rock,100
+tag.Pink Floyd.classic rock,79
+tag.Pink Floyd.Psychedelic Rock,72
+tag.Pink Floyd.rock,53
+tag.Pink Floyd.psychedelic,44
+tag.Pink Floyd.british,13
+tag.Pink Floyd.Progressive,11
+tag.Pink Floyd.Pink Floyd,10
+tag.Pink Floyd.70s,8
+tag.Pink Floyd.alternative,6
+tag.Metallica,
+tag.Metallica.thrash metal,100
+tag.Metallica.metal,91
+tag.Metallica.heavy metal,74
+tag.Metallica.hard rock,41
+tag.Metallica.rock,34
+tag.Metallica.seen live,30
+tag.Metallica.metallica,10
+tag.Metallica.speed metal,7
+tag.Metallica.classic rock,6
+tag.Metallica.american,6
+tag.Rihanna,
+tag.Rihanna.pop,100
+tag.Rihanna.rnb,89
+tag.Rihanna.female vocalists,63
+tag.Rihanna.dance,56
+tag.Rihanna.Hip-Hop,41
+tag.Rihanna.Rihanna,21
+tag.Rihanna.r&b,9
+tag.Rihanna.seen live,7
+tag.Rihanna.hip hop,6
+tag.Rihanna.reggae,6

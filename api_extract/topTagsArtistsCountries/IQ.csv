@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Adele,
+tag.Adele.soul,100
+tag.Adele.female vocalists,82
+tag.Adele.british,66
+tag.Adele.singer-songwriter,51
+tag.Adele.indie,40
+tag.Adele.pop,19
+tag.Adele.Adele,12
+tag.Adele.jazz,8
+tag.Adele.acoustic,4
+tag.Adele.female vocalist,4
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Metallica,
+tag.Metallica.thrash metal,100
+tag.Metallica.metal,91
+tag.Metallica.heavy metal,74
+tag.Metallica.hard rock,41
+tag.Metallica.rock,34
+tag.Metallica.seen live,30
+tag.Metallica.metallica,10
+tag.Metallica.speed metal,7
+tag.Metallica.classic rock,6
+tag.Metallica.american,6
+tag.David Guetta,
+tag.David Guetta.House,100
+tag.David Guetta.dance,82
+tag.David Guetta.electronic,76
+tag.David Guetta.club,50
+tag.David Guetta.techno,39
+tag.David Guetta.french,11
+tag.David Guetta.seen live,9
+tag.David Guetta.David Guetta,8
+tag.David Guetta.electronica,7
+tag.David Guetta.electro,6
+tag.The Weeknd,
+tag.The Weeknd.rnb,100
+tag.The Weeknd.electronic,80
+tag.The Weeknd.dubstep,43
+tag.The Weeknd.Canadian,39
+tag.The Weeknd.prog-rnb,27
+tag.The Weeknd.r&b,17
+tag.The Weeknd.seen live,14
+tag.The Weeknd.alternative rnb,10
+tag.The Weeknd.pop,8
+tag.The Weeknd.Hip-Hop,8

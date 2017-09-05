@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.Red Hot Chili Peppers,
+tag.Red Hot Chili Peppers.rock,100
+tag.Red Hot Chili Peppers.alternative rock,59
+tag.Red Hot Chili Peppers.alternative,54
+tag.Red Hot Chili Peppers.funk,50
+tag.Red Hot Chili Peppers.Funk Rock,50
+tag.Red Hot Chili Peppers.seen live,23
+tag.Red Hot Chili Peppers.Red Hot Chili Peppers,8
+tag.Red Hot Chili Peppers.punk,6
+tag.Red Hot Chili Peppers.american,5
+tag.Red Hot Chili Peppers.indie,5
+tag.Queen,
+tag.Queen.classic rock,100
+tag.Queen.rock,80
+tag.Queen.80s,41
+tag.Queen.hard rock,38
+tag.Queen.glam rock,35
+tag.Queen.british,16
+tag.Queen.Queen,13
+tag.Queen.70s,8
+tag.Queen.pop,7
+tag.Queen.Progressive rock,6
+tag.Daft Punk,
+tag.Daft Punk.electronic,100
+tag.Daft Punk.dance,54
+tag.Daft Punk.House,54
+tag.Daft Punk.electronica,37
+tag.Daft Punk.techno,36
+tag.Daft Punk.french,19
+tag.Daft Punk.electro,11
+tag.Daft Punk.seen live,7
+tag.Daft Punk.alternative,6
+tag.Daft Punk.Daft Punk,6

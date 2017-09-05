@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Adele,
+tag.Adele.soul,100
+tag.Adele.female vocalists,82
+tag.Adele.british,66
+tag.Adele.singer-songwriter,51
+tag.Adele.indie,40
+tag.Adele.pop,19
+tag.Adele.Adele,12
+tag.Adele.jazz,8
+tag.Adele.acoustic,4
+tag.Adele.female vocalist,4
+tag.David Guetta,
+tag.David Guetta.House,100
+tag.David Guetta.dance,82
+tag.David Guetta.electronic,76
+tag.David Guetta.club,50
+tag.David Guetta.techno,39
+tag.David Guetta.french,11
+tag.David Guetta.seen live,9
+tag.David Guetta.David Guetta,8
+tag.David Guetta.electronica,7
+tag.David Guetta.electro,6
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.Red Hot Chili Peppers,
+tag.Red Hot Chili Peppers.rock,100
+tag.Red Hot Chili Peppers.alternative rock,59
+tag.Red Hot Chili Peppers.alternative,54
+tag.Red Hot Chili Peppers.funk,50
+tag.Red Hot Chili Peppers.Funk Rock,50
+tag.Red Hot Chili Peppers.seen live,23
+tag.Red Hot Chili Peppers.Red Hot Chili Peppers,8
+tag.Red Hot Chili Peppers.punk,6
+tag.Red Hot Chili Peppers.american,5
+tag.Red Hot Chili Peppers.indie,5

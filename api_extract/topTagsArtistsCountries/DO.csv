@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Drake,
+tag.Drake.Hip-Hop,100
+tag.Drake.rap,71
+tag.Drake.rnb,49
+tag.Drake.hip hop,37
+tag.Drake.Canadian,37
+tag.Drake.Drake,16
+tag.Drake.seen live,8
+tag.Drake.r&b,7
+tag.Drake.pop,6
+tag.Drake.young money,5
+tag.The Weeknd,
+tag.The Weeknd.rnb,100
+tag.The Weeknd.electronic,80
+tag.The Weeknd.dubstep,43
+tag.The Weeknd.Canadian,39
+tag.The Weeknd.prog-rnb,27
+tag.The Weeknd.r&b,17
+tag.The Weeknd.seen live,14
+tag.The Weeknd.alternative rnb,10
+tag.The Weeknd.pop,8
+tag.The Weeknd.Hip-Hop,8
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.Calvin Harris,
+tag.Calvin Harris.electronic,100
+tag.Calvin Harris.dance,75
+tag.Calvin Harris.electro,53
+tag.Calvin Harris.Disco,44
+tag.Calvin Harris.seen live,36
+tag.Calvin Harris.electronica,34
+tag.Calvin Harris.british,15
+tag.Calvin Harris.Scottish,13
+tag.Calvin Harris.House,9
+tag.Calvin Harris.indie,8

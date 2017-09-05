@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Maroon 5,
+tag.Maroon 5.rock,100
+tag.Maroon 5.pop,95
+tag.Maroon 5.pop rock,91
+tag.Maroon 5.alternative,69
+tag.Maroon 5.alternative rock,52
+tag.Maroon 5.seen live,15
+tag.Maroon 5.maroon 5,14
+tag.Maroon 5.indie,12
+tag.Maroon 5.american,11
+tag.Maroon 5.male vocalists,9
+tag.Ed Sheeran,
+tag.Ed Sheeran.acoustic,100
+tag.Ed Sheeran.british,81
+tag.Ed Sheeran.singer-songwriter,78
+tag.Ed Sheeran.easy-listening,28
+tag.Ed Sheeran.Grime,24
+tag.Ed Sheeran.pop,21
+tag.Ed Sheeran.seen live,19
+tag.Ed Sheeran.male vocalists,12
+tag.Ed Sheeran.indie,12
+tag.Ed Sheeran.folk,11
+tag.Adele,
+tag.Adele.soul,100
+tag.Adele.female vocalists,82
+tag.Adele.british,66
+tag.Adele.singer-songwriter,51
+tag.Adele.indie,40
+tag.Adele.pop,19
+tag.Adele.Adele,12
+tag.Adele.jazz,8
+tag.Adele.acoustic,4
+tag.Adele.female vocalist,4
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14

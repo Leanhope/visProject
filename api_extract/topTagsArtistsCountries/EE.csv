@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Lana Del Rey,
+tag.Lana Del Rey.female vocalists,100
+tag.Lana Del Rey.indie,92
+tag.Lana Del Rey.indie pop,88
+tag.Lana Del Rey.pop,79
+tag.Lana Del Rey.alternative,66
+tag.Lana Del Rey.american,14
+tag.Lana Del Rey.dream pop,12
+tag.Lana Del Rey.seen live,11
+tag.Lana Del Rey.trip-hop,9
+tag.Lana Del Rey.singer-songwriter,9
+tag.David Bowie,
+tag.David Bowie.rock,100
+tag.David Bowie.glam rock,99
+tag.David Bowie.classic rock,86
+tag.David Bowie.80s,48
+tag.David Bowie.alternative,43
+tag.David Bowie.british,23
+tag.David Bowie.pop,19
+tag.David Bowie.70s,15
+tag.David Bowie.glam,14
+tag.David Bowie.seen live,11
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.The Weeknd,
+tag.The Weeknd.rnb,100
+tag.The Weeknd.electronic,80
+tag.The Weeknd.dubstep,43
+tag.The Weeknd.Canadian,39
+tag.The Weeknd.prog-rnb,27
+tag.The Weeknd.r&b,17
+tag.The Weeknd.seen live,14
+tag.The Weeknd.alternative rnb,10
+tag.The Weeknd.pop,8
+tag.The Weeknd.Hip-Hop,8

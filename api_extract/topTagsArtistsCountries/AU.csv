@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.David Bowie,
+tag.David Bowie.rock,100
+tag.David Bowie.glam rock,99
+tag.David Bowie.classic rock,86
+tag.David Bowie.80s,48
+tag.David Bowie.alternative,43
+tag.David Bowie.british,23
+tag.David Bowie.pop,19
+tag.David Bowie.70s,15
+tag.David Bowie.glam,14
+tag.David Bowie.seen live,11
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Tame Impala,
+tag.Tame Impala.Psychedelic Rock,100
+tag.Tame Impala.psychedelic,92
+tag.Tame Impala.indie rock,60
+tag.Tame Impala.seen live,51
+tag.Tame Impala.australian,48
+tag.Tame Impala.rock,41
+tag.Tame Impala.indie,20
+tag.Tame Impala.Neo-Psychedelia,13
+tag.Tame Impala.alternative,6
+tag.Tame Impala.space rock,6
+tag.Kanye West,
+tag.Kanye West.Hip-Hop,100
+tag.Kanye West.rap,68
+tag.Kanye West.hip hop,40
+tag.Kanye West.rnb,31
+tag.Kanye West.Kanye West,24
+tag.Kanye West.seen live,22
+tag.Kanye West.Gay Fish,6
+tag.Kanye West.american,6
+tag.Kanye West.pop,6
+tag.Kanye West.chicago,5

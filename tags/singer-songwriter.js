@@ -1,4 +1,4 @@
-var singer-songwriter = {
+var singersongwriter = {
 "UZ": 1.2422360248447204,
 "CH": 3.225806451612903,
 "GL": 3.4712950600801067,

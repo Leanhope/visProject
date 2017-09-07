@@ -4,6 +4,7 @@ import json
 from collections import namedtuple
 import requests
 import os.path
+#get first 5 top artits from countries and convert to .js dic
 
 f = open('country_extract.json', 'r')
 data = f.read()
@@ -26,11 +27,14 @@ for i in data:
 		f = open('geoTopArtists/'+name+'.json')
 		final += "\""+code+"\": { "
 		country = f.read()
+		#load file as json element
 		country = json.loads(country)
 		country = country["topartists"]["artist"]
 		print("-"+name)
 		
+		#get the first top artist from country file
 		for i in range(0, 5):
+			#try if exist
 			try:
 				artist = country[i]["name"]
 				listeners = country[i]["listeners"]

@@ -34,7 +34,7 @@
 <body>
 	<div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
+	<!--Artists overview-->
 	<div class="header"></div>
 	<div class="error"></div>
 	<div class="overview">
@@ -51,52 +51,51 @@
 	</div>
 	</div>
 
-
+	<!--Bubble chart-->
 	<div id="bubble" class="sidenavbubble">
 	<div class="headerbubble">Top Tags of Top Artists</div>
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNavBubble()">&times;</a>
 
-	<svg width="900" height="900" font-family="sans-serif" font-size="10" text-anchor="middle" class="bubbleFrame"></svg>
+		<svg width="900" height="900" font-family="sans-serif" font-size="10" text-anchor="middle" class="bubbleFrame"></svg>
 	</div>
 
 	<div class = "fullscreen" id="world-map"></div>
 
-  <div id="Sidenav" class="sidenav_right">
+  	<div id="Sidenav" class="sidenav_right">
+    	<h3 style="margin-left: 5px;color: lightgrey">Heatmap Options</h3>
+    	<a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
+      	<button class="button" value="red" style="background-color: #de2d26"> Red</button>
+      	<button class="button" value="blue" style="background-color: #2b8cbe">Blue</button>
+      	<button class="button" value=green style="background-color: #31a354">Green</button>
+      	<button class="button" value=grey style="background-color: #636363">Grey</button>
 
-    <h3 style="margin-left: 5px;color: lightgrey">Heatmap Options</h3>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
-      <button class="button" value="red" style="background-color: #de2d26"> Red</button>
-      <button class="button" value="blue" style="background-color: #2b8cbe">Blue</button>
-      <button class="button" value=green style="background-color: #31a354">Green</button>
-      <button class="button" value=grey style="background-color: #636363">Grey</button>
+    	<form>
+      	<select id = "tags" class = "tags">
+        	<option id = "rock">Rock</option> 
+        	<option id = "metal">Metal</option> 
+        	<option id = "jazz">Jazz</option> 
+        	<option id = "blues">Blues</option> 
+        	<option id = "indie">Indie</option> 
+        	<option id = "electro">Electro</option> 
+        	<option id = "classic">Classic</option>
+        	<option id = "rap">Rap</option>    
+        	<option id = "pop">Pop</option>       
+      	</select>
+    	</form>
 
-    <form>
-      <select id = "tags" class = "tags">
-        <option id = "rock">Rock</option> 
-        <option id = "metal">Metal</option> 
-        <option id = "jazz">Jazz</option> 
-        <option id = "blues">Blues</option> 
-        <option id = "indie">Indie</option> 
-        <option id = "electro">Electro</option> 
-        <option id = "classic">Classic</option>
-        <option id = "rap">Rap</option>    
-        <option id = "pop">Pop</option>       
-      </select>
-    </form>
-
-    <form>
-      <fieldset id = "normalize" style="border:none; color: lightgrey; margin-top: 20px">
-        <input type="radio"  name="functions" id="Linear" value="linear" checked>
-        <label for="Linear">Linear</label>
-        <input type="radio"  name="functions" id="Polynomial" value="polynomial">
-        <label for="Polynomial">Polynomial</label>
-      </fieldset>
-    </form>
-  </div>
+    	<form>
+      		<fieldset id = "normalize" style="border:none; color: lightgrey; margin-top: 20px">
+        		<input type="radio"  name="functions" id="Linear" value="linear" checked>
+        		<label for="Linear">Linear</label>
+        		<input type="radio"  name="functions" id="Polynomial" value="polynomial">
+        		<label for="Polynomial">Polynomial</label>
+			</fieldset>
+		</form>
+  	</div>
   
-  <div class = "navbar">
-    <span class = "navbar" style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-  </div>
+  	<div class = "navbar">
+    	<span class = "navbar" style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776; Menu</span>
+  	</div>
 
 
 
@@ -124,6 +123,7 @@
 				}]
 			},
 
+			//Click on region event (open )
 			onRegionTipShow: function(e, el, code){
 			el.html(el.html()+' ('+ eval(tag)[code].toFixed(2)+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
 			},
@@ -227,70 +227,71 @@
 
 		var color = d3.scaleOrdinal(d3.schemeCategory20c);
 
-	var pack = d3.pack()
+		var pack = d3.pack()
     	.size([width, height])
     	.padding(1.5);
-	d3.csv("api_extract/topTagsArtistsCountries/"+ccode+".csv", function(d) {
-  	d.value = +d.value;
-  	if (d.value) return d;
-	}, function(error, classes) {
-  	if (error) throw error;
+		d3.csv("api_extract/topTagsArtistsCountries/"+ccode+".csv", function(d){
+  				d.value = +d.value;
+  				if (d.value) return d;
+			},
 
-  	var root = d3.hierarchy({children: classes})
-      .sum(function(d) { return d.value; })
-      .each(function(d) {
-        if (id = d.data.id) {
-          var id, i = id.lastIndexOf(".");
-          d.id = id;
-          d.package = id.slice(0, i);
-          d.class = id.slice(i + 1);
-        }
-      });
+			function(error, classes) {
+  			if (error) throw error;
+
+  			var root = d3.hierarchy({children: classes})
+      		.sum(function(d) { return d.value; })
+      		
+      		.each(function(d) {
+        		if (id = d.data.id) {
+        			var id, i = id.lastIndexOf(".");
+        			d.id = id;
+        			d.package = id.slice(0, i);
+        			d.class = id.slice(i + 1);
+        		}
+      		});
 
 
-	var node = svg.selectAll(".node")
-    .data(pack(root).leaves())
-    .enter().append("g")
-      .attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+		var node = svg.selectAll(".node")
+    	.data(pack(root).leaves())
+    	.enter().append("g")
+      	.attr("class", "node")
+      	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-  	node.append("circle")
-      .attr("id", function(d) { return d.id; })
-      .attr("r", function(d) { return d.r; })
-      .style("fill", function(d) { return color(d.package); })
-     // .on("mouseover", function(d) {
-     // 	d3.select(this).style("fill", "url(#img.png)");})
-     // .on("mouseout", function(d){
-     // 	d3.select(this).style("fill",color(d.package));
-    //  })
+  		node.append("circle")
+      	.attr("id", function(d) { return d.id; })
+      	.attr("r", function(d) { return d.r; })
+      	.style("fill", function(d) { return color(d.package); })
+        //.on("mouseover", function(d) {
+        //d3.select(this).style("fill", "url(#img.png)");})
+        //.on("mouseout", function(d){
+        //    d3.select(this).style("fill",color(d.package));
+        //})
 	;
 
+        node.append("clipPath")
+        .attr("id", function(d) { return "clip-" + d.id; })
+		.append("use")
+		.attr("xlink:href", function(d) { return "#" + d.id; });
 
-  	node.append("clipPath")
-      .attr("id", function(d) { return "clip-" + d.id; })
-    .append("use")
-      .attr("xlink:href", function(d) { return "#" + d.id; });
+  		node.append("text")
+		.attr("clip-path", function(d) { return "url(#clip-" + d.id + ")"; })
+		.selectAll("tspan")
+		.data(function(d) { return d.class.split(/(?=[A-Z][^A-Z])/g); })
+		.enter().append("tspan")
+		.attr("x", 0)
+		.attr("y", function(d, i, nodes) { return 13 + (i - nodes.length / 2 - 0.5) * 10; })
+		.text(function(d) { return d; });
 
-  	node.append("text")
-      .attr("clip-path", function(d) { return "url(#clip-" + d.id + ")"; })
-    .selectAll("tspan")
-    .data(function(d) { return d.class.split(/(?=[A-Z][^A-Z])/g); })
-    .enter().append("tspan")
-      .attr("x", 0)
-      .attr("y", function(d, i, nodes) { return 13 + (i - nodes.length / 2 - 0.5) * 10; })
-      .text(function(d) { return d; });
-
-  	node.append("title")
-  			
-    	  .text(function(d) { 
-    	  	var artist = d.id.split(".")
+		node.append("title")
+		.text(function(d) { 
+		var artist = d.id.split(".")
     	  	
-    	  	return artist[1] + ": " + format(d.value); });
-	});
+		return artist[1] + ": " + format(d.value); });
+		});
 
 
 
-	}
+		}
 	
 
     $("#tags").change(function() {

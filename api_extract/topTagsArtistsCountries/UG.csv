@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Maroon 5,
+tag.Maroon 5.rock,100
+tag.Maroon 5.pop,95
+tag.Maroon 5.pop rock,91
+tag.Maroon 5.alternative,69
+tag.Maroon 5.alternative rock,52
+tag.Maroon 5.seen live,15
+tag.Maroon 5.maroon 5,14
+tag.Maroon 5.indie,12
+tag.Maroon 5.american,11
+tag.Maroon 5.male vocalists,9
+tag.Ed Sheeran,
+tag.Ed Sheeran.acoustic,100
+tag.Ed Sheeran.british,81
+tag.Ed Sheeran.singer-songwriter,78
+tag.Ed Sheeran.easy-listening,28
+tag.Ed Sheeran.Grime,24
+tag.Ed Sheeran.pop,21
+tag.Ed Sheeran.seen live,19
+tag.Ed Sheeran.male vocalists,12
+tag.Ed Sheeran.indie,12
+tag.Ed Sheeran.folk,11
+tag.Sia,
+tag.Sia.female vocalists,100
+tag.Sia.chillout,76
+tag.Sia.indie,70
+tag.Sia.trip-hop,58
+tag.Sia.downtempo,57
+tag.Sia.australian,21
+tag.Sia.pop,19
+tag.Sia.singer-songwriter,18
+tag.Sia.electronic,16
+tag.Sia.alternative,9
+tag.Major Lazer,
+tag.Major Lazer.seen live,100
+tag.Major Lazer.dancehall,89
+tag.Major Lazer.electronic,86
+tag.Major Lazer.reggae,68
+tag.Major Lazer.dub,56
+tag.Major Lazer.electro,39
+tag.Major Lazer.dance,11
+tag.Major Lazer.ragga,7
+tag.Major Lazer.moombahton,6
+tag.Major Lazer.trap,6

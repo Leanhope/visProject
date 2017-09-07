@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Bob Dylan,
+tag.Bob Dylan.folk,100
+tag.Bob Dylan.singer-songwriter,70
+tag.Bob Dylan.classic rock,65
+tag.Bob Dylan.folk rock,53
+tag.Bob Dylan.rock,45
+tag.Bob Dylan.seen live,23
+tag.Bob Dylan.blues,17
+tag.Bob Dylan.60s,14
+tag.Bob Dylan.Bob Dylan,9
+tag.Bob Dylan.american,6
+tag.Michael Jackson,
+tag.Michael Jackson.pop,100
+tag.Michael Jackson.80s,50
+tag.Michael Jackson.dance,41
+tag.Michael Jackson.soul,36
+tag.Michael Jackson.funk,34
+tag.Michael Jackson.king of pop,11
+tag.Michael Jackson.michael jackson,10
+tag.Michael Jackson.rock,8
+tag.Michael Jackson.Disco,7
+tag.Michael Jackson.legend,7
+tag.John Mayer,
+tag.John Mayer.singer-songwriter,100
+tag.John Mayer.acoustic,87
+tag.John Mayer.rock,71
+tag.John Mayer.pop,58
+tag.John Mayer.Acoustic Rock,50
+tag.John Mayer.seen live,27
+tag.John Mayer.blues,25
+tag.John Mayer.alternative,19
+tag.John Mayer.john mayer,16
+tag.John Mayer.male vocalists,11
+tag.Bruce Springsteen,
+tag.Bruce Springsteen.rock,100
+tag.Bruce Springsteen.classic rock,78
+tag.Bruce Springsteen.singer-songwriter,59
+tag.Bruce Springsteen.80s,33
+tag.Bruce Springsteen.folk,33
+tag.Bruce Springsteen.seen live,23
+tag.Bruce Springsteen.american,12
+tag.Bruce Springsteen.americana,10
+tag.Bruce Springsteen.Bruce Springsteen,8
+tag.Bruce Springsteen.folk rock,8
+tag.Bob Marley,
+tag.Bob Marley.reggae,100
+tag.Bob Marley.roots reggae,27
+tag.Bob Marley.Bob Marley,21
+tag.Bob Marley.ska,18
+tag.Bob Marley.rock,12
+tag.Bob Marley.jamaican,5
+tag.Bob Marley.jamaica,4
+tag.Bob Marley.classic rock,4
+tag.Bob Marley.chill,3
+tag.Bob Marley.singer-songwriter,3

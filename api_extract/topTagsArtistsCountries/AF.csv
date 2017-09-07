@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.The xx,
+tag.The xx.indie,100
+tag.The xx.electronic,80
+tag.The xx.british,62
+tag.The xx.post-punk,61
+tag.The xx.seen live,42
+tag.The xx.dance,24
+tag.The xx.alternative,11
+tag.The xx.dream pop,10
+tag.The xx.indie pop,9
+tag.The xx.indie rock,8
+tag.Deftones,
+tag.Deftones.Nu Metal,100
+tag.Deftones.metal,97
+tag.Deftones.alternative,92
+tag.Deftones.alternative rock,70
+tag.Deftones.rock,66
+tag.Deftones.seen live,61
+tag.Deftones.alternative metal,52
+tag.Deftones.hard rock,16
+tag.Deftones.Nu-metal,11
+tag.Deftones.experimental,9
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.Muse,
+tag.Muse.alternative rock,100
+tag.Muse.rock,83
+tag.Muse.alternative,70
+tag.Muse.Progressive rock,57
+tag.Muse.seen live,46
+tag.Muse.indie,43
+tag.Muse.british,21
+tag.Muse.indie rock,12
+tag.Muse.britpop,10
+tag.Muse.Muse,10
+tag.Pink Floyd,
+tag.Pink Floyd.Progressive rock,100
+tag.Pink Floyd.classic rock,79
+tag.Pink Floyd.Psychedelic Rock,72
+tag.Pink Floyd.rock,53
+tag.Pink Floyd.psychedelic,44
+tag.Pink Floyd.british,13
+tag.Pink Floyd.Progressive,11
+tag.Pink Floyd.Pink Floyd,10
+tag.Pink Floyd.70s,8
+tag.Pink Floyd.alternative,6

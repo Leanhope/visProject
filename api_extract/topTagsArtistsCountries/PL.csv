@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Red Hot Chili Peppers,
+tag.Red Hot Chili Peppers.rock,100
+tag.Red Hot Chili Peppers.alternative rock,59
+tag.Red Hot Chili Peppers.alternative,54
+tag.Red Hot Chili Peppers.funk,50
+tag.Red Hot Chili Peppers.Funk Rock,50
+tag.Red Hot Chili Peppers.seen live,23
+tag.Red Hot Chili Peppers.Red Hot Chili Peppers,8
+tag.Red Hot Chili Peppers.punk,6
+tag.Red Hot Chili Peppers.american,5
+tag.Red Hot Chili Peppers.indie,5
+tag.Queen,
+tag.Queen.classic rock,100
+tag.Queen.rock,80
+tag.Queen.80s,41
+tag.Queen.hard rock,38
+tag.Queen.glam rock,35
+tag.Queen.british,16
+tag.Queen.Queen,13
+tag.Queen.70s,8
+tag.Queen.pop,7
+tag.Queen.Progressive rock,6
+tag.Ed Sheeran,
+tag.Ed Sheeran.acoustic,100
+tag.Ed Sheeran.british,81
+tag.Ed Sheeran.singer-songwriter,78
+tag.Ed Sheeran.easy-listening,28
+tag.Ed Sheeran.Grime,24
+tag.Ed Sheeran.pop,21
+tag.Ed Sheeran.seen live,19
+tag.Ed Sheeran.male vocalists,12
+tag.Ed Sheeran.indie,12
+tag.Ed Sheeran.folk,11
+tag.David Bowie,
+tag.David Bowie.rock,100
+tag.David Bowie.glam rock,99
+tag.David Bowie.classic rock,86
+tag.David Bowie.80s,48
+tag.David Bowie.alternative,43
+tag.David Bowie.british,23
+tag.David Bowie.pop,19
+tag.David Bowie.70s,15
+tag.David Bowie.glam,14
+tag.David Bowie.seen live,11

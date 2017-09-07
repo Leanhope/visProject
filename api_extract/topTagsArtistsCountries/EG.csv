@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Pink Floyd,
+tag.Pink Floyd.Progressive rock,100
+tag.Pink Floyd.classic rock,79
+tag.Pink Floyd.Psychedelic Rock,72
+tag.Pink Floyd.rock,53
+tag.Pink Floyd.psychedelic,44
+tag.Pink Floyd.british,13
+tag.Pink Floyd.Progressive,11
+tag.Pink Floyd.Pink Floyd,10
+tag.Pink Floyd.70s,8
+tag.Pink Floyd.alternative,6
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.Adele,
+tag.Adele.soul,100
+tag.Adele.female vocalists,82
+tag.Adele.british,66
+tag.Adele.singer-songwriter,51
+tag.Adele.indie,40
+tag.Adele.pop,19
+tag.Adele.Adele,12
+tag.Adele.jazz,8
+tag.Adele.acoustic,4
+tag.Adele.female vocalist,4
+tag.Sia,
+tag.Sia.female vocalists,100
+tag.Sia.chillout,76
+tag.Sia.indie,70
+tag.Sia.trip-hop,58
+tag.Sia.downtempo,57
+tag.Sia.australian,21
+tag.Sia.pop,19
+tag.Sia.singer-songwriter,18
+tag.Sia.electronic,16
+tag.Sia.alternative,9

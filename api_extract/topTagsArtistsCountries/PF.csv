@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.The Strokes,
+tag.The Strokes.indie rock,100
+tag.The Strokes.rock,98
+tag.The Strokes.indie,98
+tag.The Strokes.alternative,71
+tag.The Strokes.alternative rock,59
+tag.The Strokes.seen live,42
+tag.The Strokes.Garage Rock,29
+tag.The Strokes.The Strokes,10
+tag.The Strokes.american,10
+tag.The Strokes.new york,6
+tag.U2,
+tag.U2.rock,100
+tag.U2.classic rock,44
+tag.U2.irish,38
+tag.U2.pop,33
+tag.U2.alternative,31
+tag.U2.seen live,17
+tag.U2.alternative rock,13
+tag.U2.U2,13
+tag.U2.80s,13
+tag.U2.90s,5
+tag.alt-J,
+tag.alt-J.indie,100
+tag.alt-J.electronic,86
+tag.alt-J.seen live,79
+tag.alt-J.british,64
+tag.alt-J.alternative,60
+tag.alt-J.indie pop,51
+tag.alt-J.indie rock,13
+tag.alt-J.experimental,10
+tag.alt-J.alternative rock,6
+tag.alt-J.rock,5

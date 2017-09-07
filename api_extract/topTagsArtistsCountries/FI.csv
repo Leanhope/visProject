@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Coldplay,
+tag.Coldplay.rock,100
+tag.Coldplay.alternative,87
+tag.Coldplay.britpop,81
+tag.Coldplay.alternative rock,67
+tag.Coldplay.indie,55
+tag.Coldplay.british,28
+tag.Coldplay.seen live,22
+tag.Coldplay.Coldplay,19
+tag.Coldplay.pop,18
+tag.Coldplay.indie rock,11
+tag.David Bowie,
+tag.David Bowie.rock,100
+tag.David Bowie.glam rock,99
+tag.David Bowie.classic rock,86
+tag.David Bowie.80s,48
+tag.David Bowie.alternative,43
+tag.David Bowie.british,23
+tag.David Bowie.pop,19
+tag.David Bowie.70s,15
+tag.David Bowie.glam,14
+tag.David Bowie.seen live,11
+tag.Sia,
+tag.Sia.female vocalists,100
+tag.Sia.chillout,76
+tag.Sia.indie,70
+tag.Sia.trip-hop,58
+tag.Sia.downtempo,57
+tag.Sia.australian,21
+tag.Sia.pop,19
+tag.Sia.singer-songwriter,18
+tag.Sia.electronic,16
+tag.Sia.alternative,9
+tag.Metallica,
+tag.Metallica.thrash metal,100
+tag.Metallica.metal,91
+tag.Metallica.heavy metal,74
+tag.Metallica.hard rock,41
+tag.Metallica.rock,34
+tag.Metallica.seen live,30
+tag.Metallica.metallica,10
+tag.Metallica.speed metal,7
+tag.Metallica.classic rock,6
+tag.Metallica.american,6
+tag.Queen,
+tag.Queen.classic rock,100
+tag.Queen.rock,80
+tag.Queen.80s,41
+tag.Queen.hard rock,38
+tag.Queen.glam rock,35
+tag.Queen.british,16
+tag.Queen.Queen,13
+tag.Queen.70s,8
+tag.Queen.pop,7
+tag.Queen.Progressive rock,6

@@ -1,0 +1,57 @@
+id,value
+tag,
+tag.Nirvana,
+tag.Nirvana.Grunge,100
+tag.Nirvana.rock,52
+tag.Nirvana.alternative,35
+tag.Nirvana.alternative rock,34
+tag.Nirvana.90s,28
+tag.Nirvana.punk,7
+tag.Nirvana.Nirvana,7
+tag.Nirvana.indie,4
+tag.Nirvana.american,4
+tag.Nirvana.seattle,4
+tag.Korn,
+tag.Korn.Nu Metal,100
+tag.Korn.metal,57
+tag.Korn.alternative,42
+tag.Korn.rock,39
+tag.Korn.Nu-metal,28
+tag.Korn.seen live,19
+tag.Korn.alternative metal,17
+tag.Korn.alternative rock,8
+tag.Korn.american,6
+tag.Korn.Korn,5
+tag.Slipknot,
+tag.Slipknot.Nu Metal,100
+tag.Slipknot.metal,96
+tag.Slipknot.heavy metal,44
+tag.Slipknot.Nu-metal,33
+tag.Slipknot.seen live,32
+tag.Slipknot.rock,31
+tag.Slipknot.alternative metal,19
+tag.Slipknot.alternative,12
+tag.Slipknot.Slipknot,9
+tag.Slipknot.hard rock,8
+tag.The Prodigy,
+tag.The Prodigy.electronic,100
+tag.The Prodigy.techno,47
+tag.The Prodigy.industrial,43
+tag.The Prodigy.dance,37
+tag.The Prodigy.seen live,33
+tag.The Prodigy.electronica,30
+tag.The Prodigy.big beat,15
+tag.The Prodigy.breakbeat,13
+tag.The Prodigy.Rave,12
+tag.The Prodigy.alternative,10
+tag.Muse,
+tag.Muse.alternative rock,100
+tag.Muse.rock,83
+tag.Muse.alternative,70
+tag.Muse.Progressive rock,57
+tag.Muse.seen live,46
+tag.Muse.indie,43
+tag.Muse.british,21
+tag.Muse.indie rock,12
+tag.Muse.britpop,10
+tag.Muse.Muse,10

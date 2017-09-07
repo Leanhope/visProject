@@ -1,0 +1,92 @@
+id,value
+tag,
+tag.David Bowie,
+tag.David Bowie.rock,100
+tag.David Bowie.glam rock,99
+tag.David Bowie.classic rock,86
+tag.David Bowie.80s,48
+tag.David Bowie.alternative,43
+tag.David Bowie.british,23
+tag.David Bowie.pop,19
+tag.David Bowie.70s,15
+tag.David Bowie.glam,14
+tag.David Bowie.seen live,11
+tag.Radiohead,
+tag.Radiohead.alternative,100
+tag.Radiohead.alternative rock,81
+tag.Radiohead.rock,73
+tag.Radiohead.indie,59
+tag.Radiohead.electronic,48
+tag.Radiohead.seen live,27
+tag.Radiohead.british,22
+tag.Radiohead.britpop,17
+tag.Radiohead.indie rock,15
+tag.Radiohead.experimental,14
+tag.Pink Floyd,
+tag.Pink Floyd.Progressive rock,100
+tag.Pink Floyd.classic rock,79
+tag.Pink Floyd.Psychedelic Rock,72
+tag.Pink Floyd.rock,53
+tag.Pink Floyd.psychedelic,44
+tag.Pink Floyd.british,13
+tag.Pink Floyd.Progressive,11
+tag.Pink Floyd.Pink Floyd,10
+tag.Pink Floyd.70s,8
+tag.Pink Floyd.alternative,6
+tag.Massive Attack,
+tag.Massive Attack.trip-hop,100
+tag.Massive Attack.electronic,62
+tag.Massive Attack.chillout,42
+tag.Massive Attack.downtempo,35
+tag.Massive Attack.electronica,25
+tag.Massive Attack.seen live,16
+tag.Massive Attack.trip hop,12
+tag.Massive Attack.alternative,10
+tag.Massive Attack.british,7
+tag.Massive Attack.ambient,6
+tag.Arctic Monkeys,
+tag.Arctic Monkeys.indie rock,100
+tag.Arctic Monkeys.indie,98
+tag.Arctic Monkeys.british,75
+tag.Arctic Monkeys.rock,63
+tag.Arctic Monkeys.alternative,60
+tag.Arctic Monkeys.seen live,44
+tag.Arctic Monkeys.alternative rock,19
+tag.Arctic Monkeys.britpop,16
+tag.Arctic Monkeys.arctic monkeys,7
+tag.Arctic Monkeys.Garage Rock,4
+id,value
+tag,
+tag.[unknown],
+tag.[unknown].mysterious,100
+tag.[unknown].mistagged artist,75
+tag.[unknown].unknown,65
+tag.[unknown].rock,46
+tag.[unknown].Soundtrack,34
+tag.[unknown].seen live,22
+tag.[unknown].alternative,17
+tag.[unknown].electronic,16
+tag.[unknown].emo,15
+tag.[unknown].jazz,15
+tag.Babyface,
+tag.Babyface.rnb,100
+tag.Babyface.soul,81
+tag.Babyface.male vocalists,40
+tag.Babyface.pop,35
+tag.Babyface.rhythm and blues,27
+tag.Babyface.Babyface,13
+tag.Babyface.90s,12
+tag.Babyface.r&b,9
+tag.Babyface.r and b,7
+tag.Babyface.singer-songwriter,6
+tag.Chanté Moore,
+tag.Chanté Moore.rnb,100
+tag.Chanté Moore.female vocalists,81
+tag.Chanté Moore.soul,79
+tag.Chanté Moore.urban,31
+tag.Chanté Moore.quiet storm,22
+tag.Chanté Moore.Chante Moore,15
+tag.Chanté Moore.90s,14
+tag.Chanté Moore.r&b,6
+tag.Chanté Moore.r and b,6
+tag.Chanté Moore.love songs,6

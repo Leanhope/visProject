@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
@@ -21,7 +22,6 @@
   <script src="tags/80s.js"></script>
   <script src="tags/alternative.js"></script>
   <script src="tags/dance.js"></script>
-  
   <script src="tags/british.js"></script>
   <script src="tags/punk.js"></script>
   <script src="tags/reggae.js"></script>
@@ -34,7 +34,7 @@
   <script src="jquery.canvasjs.min.js"></script>
   <script src="https://d3js.org/d3.v4.min.js"></script>
 
-
+</meta>
 </head>
 <body>
 	<div id="mySidenav" class="sidenav">
@@ -52,7 +52,7 @@
 			<tr><td>4.</td><td class="img3"></td><td class="topa3"></td><td class="topt3"></td><td class="s3"></td></tr>
 			<tr><td>5.</td><td class="img4"></td><td class="topa4"></td><td class="topt4"></td><td class="s4"></td></tr>
 		</table>
-	<div id="tagDonut" style="height: 250px; width: 100%; z-index: 8000; margin-bottom: 20px;"></div>
+	<div id="tagDonut" style="height: 250px; width: 500px; z-index: 8000; margin-bottom: 55px;"></div>
 	</div>
 	</div>
 
@@ -81,7 +81,7 @@
 
     <form>
       <select id = "tags" class = "tags">
-        <option id = "rock">Rock</option> 
+        <option id = "rock" selected>Rock</option> 
         <option id = "metal">Metal</option> 
         <option id = "jazz">Jazz</option> 
         <option id = "blues">Blues</option> 
@@ -138,7 +138,7 @@
 			series: {
 				regions: [{
 					values: rock,
-					scale: ['#efedf5', '#756bb1'],
+					scale: blue,
 					normalizeFunction: 'linear'
 				}]
 			},
@@ -229,13 +229,13 @@
                  dict.push(arr[0].tags[i]);
               }
 
-              
+              console.log(dict)
               var sum = 0;
               $.each(dict, function(key, value){            
                 sum += parseFloat(Object.values(value)[0].toFixed(2));
               });
 
-              
+              console.log(sum)
               chart.options.data[0].dataPoints = [];
 
               $.each(dict, function(key, value){            
@@ -259,15 +259,12 @@
 	$.getJSON("results.json", function(json) {
 		
 	    my_json = json;
-	    
+	    console.log(my_json)
 	});
 
 	function openNavBubble(){
-
-
 		
 		document.getElementById("bubble").style.width = "60%";
-		
 
 		var svg = d3.select("svg"),
 		width = +svg.attr("width"),
@@ -359,12 +356,13 @@
         values.params.min = Math.min.apply(null, valuesPrev);
         values.params.max = Math.max.apply(null, valuesPrev);
         values.setValues(eval(tag));
-        
+        console.log(my_json)
       });
 
     $("#normalize").change(function() {
         value = $('input[name="functions"]:checked').val();
         var mapObject = $('#world-map').vectorMap('get', 'mapObject');
+        console.log(value.toString())
         var values = mapObject.series.regions[0]
         values.setNormalizeFunction(value.toString());
         var valuesPrev = $.map(eval(tag), function(value){return value});
@@ -376,6 +374,7 @@
     $("button").click(function(){
       var mapObject = $('#world-map').vectorMap('get', 'mapObject');
       var values = mapObject.series.regions[0];
+      console.log(eval($(this).val()));
       values.setScale(eval($(this).val()))
       var valuesPrev = $.map(eval(tag), function(value){return value});
       values.params.min = Math.min.apply(null, valuesPrev);

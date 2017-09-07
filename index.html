@@ -52,8 +52,8 @@ FACULTY OF MEDIA
 	<div class="error"></div>
 	<div class="overview">
 		<table class="toptable">
-			<tr><th></th><th>Top Artists</th><th></th><th></th></tr>
-			<tr><td></td><td><span style="font-size:15px;cursor:pointer" class="sidenave" onclick="openNavBubble()">Tag details</span></td><td></td><td></td><td></td></tr>
+			<tr><th></th><th>Top Artists</th><th><span style="font-size:16px;cursor:pointer" class="sidenave" onclick="openNavBubble()">&nbsp;<u>Show Top Tags</u></span></th><th></th></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
 			<tr><td>1.</td><td class="img0"></td><td class="topa0"></td><td class="topt0"></td><td class="s0"></td></tr>
 			<tr><td>2.</td><td class="img1"></td><td class="topa1"></td><td class="topt1"></td><td class="s1"></td></tr>
 			<tr><td>3.</td><td class="img2"></td><td class="topa2"></td><td class="topt2"></td><td class="s2"></td></tr>
@@ -403,7 +403,6 @@ FACULTY OF MEDIA
 	function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("bubble").style.width = "0";
-
     node.remove();
 	}
 

@@ -7,10 +7,17 @@ import glob
 import pathlib
 import sys
 
+#This python file is designed to create data for a single tag for the heatmap representation.
+#Our Map Framework requires the data to be in a specifically coded format, which differs
+#from the data received from the last.fm api. This file searches for every country of 'country_extract.json'
+#the corresponding data in 'results.json' and returns a new json file containing percentages for the desired tag
+#for every country in the correct format, ready to use in our webpage.
+
 source = '/home/hans/visProject/api_extract/geoTopArtists/*.json'
 token = 'ba3772fe9087004cadb3715a2f170555'
 final = str()
 tag =  sys.argv[1]
+
 with open('country_extract.json', 'r') as handle:
 	parsed = json.load(handle)
 

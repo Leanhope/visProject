@@ -6,7 +6,7 @@ import requests
 import glob
 import pathlib
 
-source = '/home/hans/visProject/api_extract/geoTopArtists/*.json'
+source = 'api_extract/geoTopArtists/*.json'
 token = 'ba3772fe9087004cadb3715a2f170555'
 url = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptags'
 	
@@ -22,7 +22,6 @@ for f in glob.glob(source):
 		r = requests.get(temp)
 		name = i['name'].replace("/", "")
 		if not file.exists():
-
-		text_file = open('artistTopTags/'+name+'.json', "w")
-		text_file.write(r.text)
-		text_file.close()
+			text_file = open('artistTopTags/'+name+'.json', "w")
+			text_file.write(r.text)
+			text_file.close()

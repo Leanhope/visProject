@@ -1,3 +1,13 @@
+<!--
+VISUALIZATION FINAL PROJECT
+///////////////////////////
+FREDERIK SUKOP, 114723
+HANS LIENHOP, 114926
+///////////////////////////
+BAUHAUS UNIVERSITÄT WEIMAR
+FACULTY OF MEDIA
+ -->
+
 <html>
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
@@ -33,9 +43,9 @@
   <script src="jquery.canvasjs.min.js"></script>
   <script src="https://d3js.org/d3.v4.min.js"></script>
 
-</meta>
 </head>
 <body>
+  <!--Creating the left navigation bar containing country data-->
 	<div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	<!--Artists overview-->
@@ -51,11 +61,12 @@
 			<tr><td>4.</td><td class="img3"></td><td class="topa3"></td><td class="topt3"></td><td class="s3"></td></tr>
 			<tr><td>5.</td><td class="img4"></td><td class="topa4"></td><td class="topt4"></td><td class="s4"></td></tr>
 		</table>
+    <!--Initializing the div containing the donut diagram -->
 	<div id="tagDonut" style="height: 250px; width: 500px; z-index: 8000; margin-bottom: 55px;"></div>
 	</div>
 	</div>
 
-	<!--Bubble chart-->
+	<!--Initializing the div for the Bubble chart-->
 	<div id="bubble" class="sidenavbubble">
 	<div class="headerbubble">Top Tags of Top Artists</div>
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNavBubble()">&times;</a>
@@ -65,7 +76,7 @@
 
 	<div class = "fullscreen" id="world-map"></div>
 
-
+  <!--Creating the right sidebar containing heatmap options -->
   <div id="Sidenav" class="sidenav_right">
 
     <h3 style="margin-left: 5px;color: lightgrey">Heatmap Options</h3>
@@ -100,6 +111,7 @@
       </select>
     </form>
 
+<!--Radio Buttons for the two normalization functions -->
     <form>
       <fieldset id = "normalize" style="border:none; color: lightgrey; margin-top: 20px">
         <input type="radio"  name="functions" id="Linear" value="linear" checked>
@@ -109,14 +121,16 @@
       </fieldset>
     </form>
   </div>
-  
+
+  <!--Create Button for opening the right Navigation Bar -->
   <div class = "navbar">
     <span class = "navbar" style="font-size:40px;cursor:pointer;z-index: 10000" onclick="openNav()">&#9776; Menu</span>
   </div>
 
 	<script>
-
+    //Initial Tag
     var tag = rock;
+    //Color Hex Codes for the Heatmap
     var blue = ['#f2f0f7','#cbc9e2','#9e9ac8','#6a51a3']
     var red = ['#fee5d9','#fcae91','#fb6a4a','#cb181d']
     var green = ['#edf8e9','#bae4b3','#74c476','#238b45']
@@ -131,18 +145,19 @@
     var name;
     var ccode;
 
+  //Function to initalize the Vector Map
 	$(function(){
 		$('#world-map').vectorMap({
 			map: 'world_mill',
 			series: {
 				regions: [{
-					values: rock,
-					scale: blue,
-					normalizeFunction: 'linear'
+					values: rock, //Dataset for the Countries
+					scale: blue, //Colorcodes
+					normalizeFunction: 'linear' //Normalization function for the colorcodes
 				}]
 			},
 
-			//Click on region event (open )
+			//Upon Hovering over a country, show Percentage for the selected Tag / Error message when no data is available
 			onRegionTipShow: function(e, el, code){
         if (topartistiscountry[code]){
 		    	el.html(el.html()+' ('+ eval(tag)[code].toFixed(2)+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
@@ -153,10 +168,15 @@
 			},
 
 
+      //Upon clicking on a country
 			onRegionClick: function(e, code) {
 				ccode = code;
 
-				document.getElementById("mySidenav").style.width = "40%";
+        /*Initialize Navbar after clicking on a country
+				At first, everything is initialized empty, because some 
+        countries have no data.*/
+
+        document.getElementById("mySidenav").style.width = "40%";
     			$(document).ready(function(){
     				$(".error").text(" ")
             		$(".header").text("");
@@ -176,6 +196,7 @@
             		$(".s3").html("");
             		$(".s4").html("");
 
+              //Initialize the CanvasJS Donut Chart
               chart = new CanvasJS.Chart("tagDonut", {
               backgroundColor:"transparent",
 
@@ -199,6 +220,7 @@
               ]
               });
 
+            //Exists the CountryCode?
             if (topartistiscountry[code])
     				{	
               $(".header").text(countries[code]);
@@ -215,6 +237,7 @@
                 $(".s" +key).html("("+value["listeners"]+")");
               });
 
+              //Extract Tag Data for the respective Country
               arr = jQuery.grep(my_json.toptags, function(i, v) {
               if(i.name == countries[code])
               return(i, v)
@@ -222,21 +245,26 @@
 
               dict = [];
 
+              /*Normally, we want to represent the top 10 tags.
+              But some Countries only have one topartist and therefore do not reach 10 Tags.
+              So we have to include a Minimum calculation, if such a country is clicked.*/
               var min = Math.min(arr[0].tags.length, 10)
 
               for(i = 0; i < min; i++) { 
                  dict.push(arr[0].tags[i]);
               }
 
-              
+              //Calculate Maximum for percentage calculation.
               var sum = 0;
               $.each(dict, function(key, value){            
                 sum += parseFloat(Object.values(value)[0].toFixed(2));
               });
 
-              
+              //Empty the chart data
               chart.options.data[0].dataPoints = [];
 
+              /*Fill it with the newly retrieved data. The percentages differ here, because the tags are represented 
+              relatively to each other and we only represent 10. */
               $.each(dict, function(key, value){            
                 chart.options.data[0].dataPoints.push({y: (parseFloat(Object.values(value)[0])/sum*100).toFixed(2), indexLabel: Object.keys(value)[0]}
               )});
@@ -255,8 +283,8 @@
 		});
 	});
 
+  //Load data as a variable
 	$.getJSON("results.json", function(json) {
-		
 	    my_json = json;
 	    
 	});
@@ -346,18 +374,21 @@
 		}
 	
 
+    //Set Map data to the selected Tag
     $("#tags").change(function() {
         tag = $(this).val().toLowerCase()
         var mapObject = $('#world-map').vectorMap('get', 'mapObject');
         var values = mapObject.series.regions[0]
         values.setValues(eval(tag));
         var valuesPrev = $.map(eval(tag), function(value){return value});
+        //Min/Max values have to be set manually for correct color coding
         values.params.min = Math.min.apply(null, valuesPrev);
         values.params.max = Math.max.apply(null, valuesPrev);
         values.setValues(eval(tag));
         
       });
 
+    //Set the normalization function upong clicking the radio button
     $("#normalize").change(function() {
         value = $('input[name="functions"]:checked').val();
         var mapObject = $('#world-map').vectorMap('get', 'mapObject');
@@ -369,6 +400,7 @@
         values.setValues(eval(tag));
       });
 
+    //Set Color Grading for the Heatmap
     $("button").click(function(){
       var mapObject = $('#world-map').vectorMap('get', 'mapObject');
       var values = mapObject.series.regions[0];
@@ -391,30 +423,6 @@
     node.remove();
 
 	}
-
-
-  chart = new CanvasJS.Chart("tagDonut", {
-    backgroundColor:"transparent",
-
-    title: {
-      text: "Toptags (relative)"
-    },
-    animationEnabled: true,
-    theme: "theme2",
-    data: [
-    {
-      type: "doughnut",
-      indexLabelFontFamily: "Garamond",
-      indexLabelFontSize: 20,
-      startAngle: 0,
-      indexLabelFontColor: "dimgrey",
-      indexLabelLineColor: "darkgrey",
-      toolTipContent: "{indexLabel}," + " {y}%",
-
-      dataPoints: []
-    }
-    ]
-  });
 
 </script>
 </body>

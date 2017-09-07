@@ -1,4 +1,3 @@
-
 <html>
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
@@ -230,13 +229,13 @@
                  dict.push(arr[0].tags[i]);
               }
 
-              console.log(dict)
+              
               var sum = 0;
               $.each(dict, function(key, value){            
                 sum += parseFloat(Object.values(value)[0].toFixed(2));
               });
 
-              console.log(sum)
+              
               chart.options.data[0].dataPoints = [];
 
               $.each(dict, function(key, value){            
@@ -260,7 +259,7 @@
 	$.getJSON("results.json", function(json) {
 		
 	    my_json = json;
-	    console.log(my_json)
+	    
 	});
 
 	function openNavBubble(){
@@ -360,13 +359,12 @@
         values.params.min = Math.min.apply(null, valuesPrev);
         values.params.max = Math.max.apply(null, valuesPrev);
         values.setValues(eval(tag));
-        console.log(my_json)
+        
       });
 
     $("#normalize").change(function() {
         value = $('input[name="functions"]:checked').val();
         var mapObject = $('#world-map').vectorMap('get', 'mapObject');
-        console.log(value.toString())
         var values = mapObject.series.regions[0]
         values.setNormalizeFunction(value.toString());
         var valuesPrev = $.map(eval(tag), function(value){return value});
@@ -378,7 +376,6 @@
     $("button").click(function(){
       var mapObject = $('#world-map').vectorMap('get', 'mapObject');
       var values = mapObject.series.regions[0];
-      console.log(eval($(this).val()));
       values.setScale(eval($(this).val()))
       var valuesPrev = $.map(eval(tag), function(value){return value});
       values.params.min = Math.min.apply(null, valuesPrev);

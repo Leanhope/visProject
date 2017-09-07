@@ -14,18 +14,14 @@ final = "var topartistiscountry = {\n"
 
 data = json.loads(data)
 error = 0
-limit = '3'
-token = 'ba3772fe9087004cadb3715a2f170555'
-url = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists' #geoArtists
-#url = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks' #geoTracks
-#http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=Albania&api_key=ba3772fe9087004cadb3715a2f170555&format=json&limit=25
 
-
+#get all countries from country_extra.json
 for i in data:
 	code = i["Code"]
 	name = i["Name"]
 	print(os.path.isfile('geoTopArtists/'+name+'.json'))
 	
+	#get all countries from *.json
 	if os.path.isfile('geoTopArtists/'+name+'.json'):
 		f = open('geoTopArtists/'+name+'.json')
 		final += "\""+code+"\": { "

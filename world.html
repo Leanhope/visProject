@@ -1,18 +1,15 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-  <meta content="utf-8" http-equiv="encoding">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
+  <meta content="utf-8" http-equiv="encoding"></meta>
   <title>Last.fm Visualization</title>
   <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="css/sidebar.css" type="text/css" media="screen"/>
   <script src="jquery.js"></script>
   <script src="jquery-jvectormap-2.0.3.min.js"></script>
   <script src="jquery-jvectormap-world-mill.js"></script>
-  <script src="morris.min.js"></script>
-  <script src="raphael.js"></script>
-  <link rel="stylesheet" href="morris.css" type="text/css" media="screen">  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>  
+
   <script src="tags/rock.js"></script>
   <script src="tags/metal.js"></script>
   <script src="tags/jazz.js"></script>
@@ -22,9 +19,18 @@
   <script src="tags/electro.js"></script>
   <script src="tags/rap.js"></script>
   <script src="tags/pop.js"></script>
+  <script src="tags/80s.js"></script>
+  <script src="tags/alternative.js"></script>
+  <script src="tags/dance.js"></script>
+  
+  <script src="tags/british.js"></script>
+  <script src="tags/punk.js"></script>
+  <script src="tags/reggae.js"></script>
+  <script src="tags/rnb.js"></script>
+  <script src="tags/singer-songwriter.js"></script>
+
   <script src="api_extract/topartists.js"></script>
   <script src="api_extract/countries.js"></script>
-  <script src="dropdown.js"></script>
   <script src="sidebar.js"></script>
   <script src="jquery.canvasjs.min.js"></script>
   <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -47,7 +53,7 @@
 			<tr><td>4.</td><td class="img3"></td><td class="topa3"></td><td class="topt3"></td><td class="s3"></td></tr>
 			<tr><td>5.</td><td class="img4"></td><td class="topa4"></td><td class="topt4"></td><td class="s4"></td></tr>
 		</table>
-	<div id="tagDonut" style="height: 250px; width: 600px; z-index: 8000"></div>
+	<div id="tagDonut" style="height: 250px; width: 100%; z-index: 8000; margin-bottom: 20px;"></div>
 	</div>
 	</div>
 
@@ -61,43 +67,54 @@
 
 	<div class = "fullscreen" id="world-map"></div>
 
-  	<div id="Sidenav" class="sidenav_right">
-    	<h3 style="margin-left: 5px;color: lightgrey">Heatmap Options</h3>
-    	<a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
-      	<button class="button" value="red" style="background-color: #de2d26"> Red</button>
-      	<button class="button" value="blue" style="background-color: #2b8cbe">Blue</button>
-      	<button class="button" value=green style="background-color: #31a354">Green</button>
-      	<button class="button" value=grey style="background-color: #636363">Grey</button>
 
-    	<form>
-      	<select id = "tags" class = "tags">
-        	<option id = "rock">Rock</option> 
-        	<option id = "metal">Metal</option> 
-        	<option id = "jazz">Jazz</option> 
-        	<option id = "blues">Blues</option> 
-        	<option id = "indie">Indie</option> 
-        	<option id = "electro">Electro</option> 
-        	<option id = "classic">Classic</option>
-        	<option id = "rap">Rap</option>    
-        	<option id = "pop">Pop</option>       
-      	</select>
-    	</form>
+  <div id="Sidenav" class="sidenav_right">
 
-    	<form>
-      		<fieldset id = "normalize" style="border:none; color: lightgrey; margin-top: 20px">
-        		<input type="radio"  name="functions" id="Linear" value="linear" checked>
-        		<label for="Linear">Linear</label>
-        		<input type="radio"  name="functions" id="Polynomial" value="polynomial">
-        		<label for="Polynomial">Polynomial</label>
-			</fieldset>
-		</form>
-  	</div>
+    <h3 style="margin-left: 5px;color: lightgrey">Heatmap Options</h3>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">&times;</a>
+      <button class="button" value="red" style="background: linear-gradient(to right, #fee5d9,#fcae91,#fb6a4a,#cb181d)"> Red</button>
+      <button class="button" value="blue" style="background: linear-gradient(to right, #f2f0f7,#cbc9e2,#9e9ac8,#6a51a3)">Blue</button>
+      <button class="button" value=green style="background: linear-gradient(to right, #edf8e9,#bae4b3,#74c476,#238b45)">Green</button>
+      <button class="button" value=sunrise style="background:  linear-gradient(to right, #ffffb2, #fecc5c, #fd8d3c,#e31a1c)">Sunrise</button>
+      <!--<button class="button" value=purple style="background:  linear-gradient(to right, #edf8fb,#b3cde3,#8c96c6,#88419d)">Purple</button>
+      <button class="button" value=green2 style="background:  linear-gradient(to right, #edf8fb,#b2e2e2,#66c2a4,#238b45)">green2</button>
+      <button class="button" value=bluegreen style="background:  linear-gradient(to right, #ffffcc,#a1dab4,#41b6c4,#225ea8)">bluegreen</button>-->
+
+    <form>
+      <select id = "tags" class = "tags">
+        <option id = "rock">Rock</option> 
+        <option id = "metal">Metal</option> 
+        <option id = "jazz">Jazz</option> 
+        <option id = "blues">Blues</option> 
+        <option id = "indie">Indie</option> 
+        <option id = "electro">Electro</option> 
+        <option id = "classic">Classic</option>
+        <option id = "rap">Rap</option>    
+        <option id = "pop">Pop</option>  
+        <option id = "80s">Eigthies</option>       
+        <option id = "alternative">Alternative</option>       
+        <option id = "dance">Dance</option>       
+        <option id = "british">British</option>       
+        <option id = "punk">Punk</option>       
+        <option id = "reggae">Reggae</option>       
+        <option id = "rnb">RnB</option>       
+        <option id = "singer-songwriter">SingerSongwriter</option>       
+      </select>
+    </form>
+
+    <form>
+      <fieldset id = "normalize" style="border:none; color: lightgrey; margin-top: 20px">
+        <input type="radio"  name="functions" id="Linear" value="linear" checked>
+        <label for="Linear">Linear</label>
+        <input type="radio"  name="functions" id="Polynomial" value="polynomial">
+        <label for="Polynomial">Polynomial</label>
+      </fieldset>
+    </form>
+  </div>
   
-  	<div class = "navbar">
-    	<span class = "navbar" style="font-size:40px;cursor:pointer" onclick="openNav()" >&#9776; Menu</span>
-  	</div>
-
-
+  <div class = "navbar">
+    <span class = "navbar" style="font-size:40px;cursor:pointer;z-index: 10000" onclick="openNav()">&#9776; Menu</span>
+  </div>
 
 	<script>
 
@@ -105,7 +122,11 @@
     var blue = ['#f2f0f7','#cbc9e2','#9e9ac8','#6a51a3']
     var red = ['#fee5d9','#fcae91','#fb6a4a','#cb181d']
     var green = ['#edf8e9','#bae4b3','#74c476','#238b45']
-    var grey = ['#f7f7f7','#cccccc','#969696','#525252']
+    var sunrise = ['#ffffb2', '#fecc5c', '#fd8d3c','#e31a1c']
+    //var purple = ['#edf8fb','#b3cde3','#8c96c6','#88419d']
+    //var green2 = ['#edf8fb','#b2e2e2','#66c2a4','#238b45']
+    //var bluegreen = ['#ffffcc','#a1dab4','#41b6c4','#225ea8']
+
     var my_json;
     var dict;
     var chart
@@ -125,7 +146,12 @@
 
 			//Click on region event (open )
 			onRegionTipShow: function(e, el, code){
-			el.html(el.html()+' ('+ eval(tag)[code].toFixed(2)+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
+        if (topartistiscountry[code]){
+		    	el.html(el.html()+' ('+ eval(tag)[code].toFixed(2)+ '% ' + 'of the most popular music is tagged ' + $("#tags").val() + ')');
+        }
+        else{
+          el.html("No data available for " + el.html());
+        }
 			},
 
 
@@ -135,22 +161,45 @@
 				document.getElementById("mySidenav").style.width = "40%";
     			$(document).ready(function(){
     				$(".error").text(" ")
-              $(".header").text("");
-              $(".topa0").text("");
-              $(".topa1").text("");
-              $(".topa2").text("");
-              $(".topa3").text("");
-              $(".topa4").text("");
-              $(".img0").html("");
-              $(".img1").html("");
-              $(".img2").html("");
-              $(".img3").html("");
-              $(".img4").html("");
-              $(".s0").html("");
-              $(".s1").html("");
-              $(".s2").html("");
-              $(".s3").html("");
-              $(".s4").html("");
+            		$(".header").text("");
+            		$(".topa0").text("");
+            		$(".topa1").text("");
+            		$(".topa2").text("");
+            		$(".topa3").text("");
+            		$(".topa4").text("");
+            		$(".img0").html("");
+            		$(".img1").html("");
+            		$(".img2").html("");
+            		$(".img3").html("");
+            		$(".img4").html("");
+            		$(".s0").html("");
+            		$(".s1").html("");
+            		$(".s2").html("");
+            		$(".s3").html("");
+            		$(".s4").html("");
+
+              chart = new CanvasJS.Chart("tagDonut", {
+              backgroundColor:"transparent",
+
+              title: {
+                text: "Toptags (relative)"
+              },
+              animationEnabled: true,
+              theme: "theme2",
+              data: [
+              {
+                type: "doughnut",
+                indexLabelFontFamily: "Garamond",
+                indexLabelFontSize: 20,
+                startAngle: 0,
+                indexLabelFontColor: "dimgrey",
+                indexLabelLineColor: "darkgrey",
+                toolTipContent: "{indexLabel}," + " {y}%",
+
+                dataPoints: []
+              }
+              ]
+              });
 
             if (topartistiscountry[code])
     				{	
@@ -201,6 +250,7 @@
     				{
     					//$(".header").text(countries[code]);
     					$(".error").text("No data for "+countries[code]);
+              chart.destroy()
     				}
     			})
 			;}
@@ -214,10 +264,11 @@
 	});
 
 	function openNavBubble(){
-		$('.bubbleFrame').load('world.html', function() {
- 		
-		});
+
+
+		
 		document.getElementById("bubble").style.width = "60%";
+		
 
 		var svg = d3.select("svg"),
 		width = +svg.attr("width"),
@@ -231,6 +282,7 @@
     	.size([width, height])
     	.padding(1.5);
 		d3.csv("api_extract/topTagsArtistsCountries/"+ccode+".csv", function(d){
+  			
   				d.value = +d.value;
   				if (d.value) return d;
 			},
@@ -250,8 +302,11 @@
         		}
       		});
 
+      			
 
-		var node = svg.selectAll(".node")
+
+		node = svg.selectAll(".node")
+		
     	.data(pack(root).leaves())
     	.enter().append("g")
       	.attr("class", "node")
@@ -267,6 +322,7 @@
         //    d3.select(this).style("fill",color(d.package));
         //})
 	;
+
 
         node.append("clipPath")
         .attr("id", function(d) { return "clip-" + d.id; })
@@ -285,12 +341,13 @@
 		node.append("title")
 		.text(function(d) { 
 		var artist = d.id.split(".")
-    	  	
+
 		return artist[1] + ": " + format(d.value); });
+
+
 		});
 
-
-
+      	
 		}
 	
 
@@ -332,10 +389,13 @@
 	function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("bubble").style.width = "0";
+
+    node.remove();
 	}
 
 	function closeNavBubble() {
     document.getElementById("bubble").style.width = "0";
+    node.remove();
 
 	}
 

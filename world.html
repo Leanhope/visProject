@@ -21,6 +21,7 @@
   <script src="tags/80s.js"></script>
   <script src="tags/alternative.js"></script>
   <script src="tags/dance.js"></script>
+  
   <script src="tags/british.js"></script>
   <script src="tags/punk.js"></script>
   <script src="tags/reggae.js"></script>
@@ -33,7 +34,7 @@
   <script src="jquery.canvasjs.min.js"></script>
   <script src="https://d3js.org/d3.v4.min.js"></script>
 
-</meta>
+
 </head>
 <body>
 	<div id="mySidenav" class="sidenav">
@@ -51,7 +52,7 @@
 			<tr><td>4.</td><td class="img3"></td><td class="topa3"></td><td class="topt3"></td><td class="s3"></td></tr>
 			<tr><td>5.</td><td class="img4"></td><td class="topa4"></td><td class="topt4"></td><td class="s4"></td></tr>
 		</table>
-	<div id="tagDonut" style="height: 250px; width: 500px; z-index: 8000; margin-bottom: 55px;"></div>
+	<div id="tagDonut" style="height: 250px; width: 100%; z-index: 8000; margin-bottom: 20px;"></div>
 	</div>
 	</div>
 
@@ -80,7 +81,7 @@
 
     <form>
       <select id = "tags" class = "tags">
-        <option id = "rock" selected>Rock</option> 
+        <option id = "rock">Rock</option> 
         <option id = "metal">Metal</option> 
         <option id = "jazz">Jazz</option> 
         <option id = "blues">Blues</option> 
@@ -137,7 +138,7 @@
 			series: {
 				regions: [{
 					values: rock,
-					scale: blue,
+					scale: ['#efedf5', '#756bb1'],
 					normalizeFunction: 'linear'
 				}]
 			},
@@ -262,8 +263,11 @@
 	});
 
 	function openNavBubble(){
+
+
 		
 		document.getElementById("bubble").style.width = "60%";
+		
 
 		var svg = d3.select("svg"),
 		width = +svg.attr("width"),

@@ -1,3 +1,4 @@
+//country codes and names
 var countries = {
 "AF": "Afghanistan",
 "AX": "Åland Islands",

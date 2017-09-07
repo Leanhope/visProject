@@ -5,6 +5,8 @@ from collections import namedtuple
 import requests
 import os.path
 
+#convert country_extract to js file with country code and name
+
 f = open('country_extract.json', 'r')
 data = f.read()
 
